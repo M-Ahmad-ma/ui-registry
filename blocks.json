@@ -13,7 +13,8 @@
         "three",
         "@react-three/drei",
         "framer-motion"
-      ]
+      ],
+      "imports": [{ "name": "motion", "from": "framer-motion" }]
     },
     {
       "id": "hero-motion",
