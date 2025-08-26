@@ -14,7 +14,6 @@
         "@react-three/drei",
         "framer-motion"
       ],
-      "imports": [{ "name": "motion", "from": "framer-motion" }]
     },
     {
       "id": "hero-motion",
@@ -23,6 +22,7 @@
       "code": "function HeroMotion() {\n  return (\n    <div className=\"relative overflow-hidden rounded-2xl p-10 bg-gradient-to-br from-indigo-600 to-fuchsia-600\">\n      <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className=\"text-4xl font-bold\">\n        Motion Hero\n      </motion.h1>\n      <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className=\"mt-2 text-white/80\">\n        Smooth and GPU-accelerated.\n      </motion.p>\n    </div>\n  );\n}\nHeroMotion",
       "tags": ["motion", "hero"],
       "dependencies": ["framer-motion"]
+      "imports": [{ "name": "motion", "from": "framer-motion" }]
     },
     {
       "id": "pricing-simple",
