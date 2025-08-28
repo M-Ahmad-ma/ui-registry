@@ -6,38 +6,36 @@
       "id": "hero-threejs",
       "title": "Hero Section 3D",
       "description": "Hero section with Three.js, shaders, and floating particles",
-      "path": "components/HeroSection",
+      "code": "function HeroSection() {\n  const { useRef, useMemo } = React;\n  const { Canvas, useFrame } = ReactThreeFiber;\n  const { OrbitControls, Environment } = Drei;\n\n  const vertexShader = `\nuniform float uTime;\nuniform vec2 uMouse;\nvarying vec2 vUv;\nvarying vec3 vPosition;\nvoid main() {\n  vUv = uv;\n  vPosition = position;\n  vec3 pos = position;\n  float wave = sin(pos.x * 2.0 + uTime) * cos(pos.y * 2.0 + uTime) * 0.1;\n  float mouseInfluence = length(uMouse - pos.xy) * 0.5;\n  pos.z += wave + sin(mouseInfluence + uTime) * 0.05;\n  gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);\n}`;\n\n  const fragmentShader = `\nuniform float uTime;\nuniform vec2 uMouse;\nuniform vec3 uColor1;\nuniform vec3 uColor2;\nuniform vec3 uColor3;\nvarying vec2 vUv;\nvarying vec3 vPosition;\nvoid main() {\n  vec2 uv = vUv;\n  float gradient1 = sin(uv.x * 3.0 + uTime * 0.5) * cos(uv.y * 3.0 + uTime * 0.3);\n  float gradient2 = sin(uv.x * 5.0 - uTime * 0.7) * cos(uv.y * 2.0 + uTime * 0.4);\n  vec2 mouseUv = uMouse * 0.5 + 0.5;\n  float mouseDistance = distance(uv, mouseUv);\n  float mouseEffect = 1.0 - smoothstep(0.0, 0.5, mouseDistance);\n  float mixFactor = (gradient1 + gradient2) * 0.5 + 0.5 + mouseEffect * 0.3;\n  vec3 color = mix(uColor1, uColor2, mixFactor);\n  color = mix(color, uColor3, sin(uTime * 0.5) * 0.5 + 0.5);\n  float noise = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);\n  color += noise * 0.05;\n  gl_FragColor = vec4(color, 0.8);\n}`;\n\n  const CustomShaderMaterial = () => {\n    const materialRef = useRef();\n    const uniforms = useMemo(() => ({\n      uTime: { value: 0 },\n      uMouse: { value: [0,0] },\n      uColor1: { value: [0.082,0.502,0.239] },\n      uColor2: { value: [0.518,0.8,0.086] },\n      uColor3: { value: [0.941,1.0,0.957] },\n    }), []);\n\n    useFrame(state => {\n      if(materialRef.current){\n        materialRef.current.uniforms.uTime.value = state.clock.elapsedTime;\n        materialRef.current.uniforms.uMouse.value = [\n          (state.mouse.x * state.viewport.width)/2,\n          (state.mouse.y * state.viewport.height)/2\n        ];\n      }\n    });\n\n    return <shaderMaterial ref={materialRef} vertexShader={vertexShader} fragmentShader={fragmentShader} uniforms={uniforms} transparent />;\n  };\n\n  const AnimatedMesh = () => (\n    <mesh rotation={[0,0,0]} scale={[4,3,1]}>\n      <planeGeometry args={[2,2,32,32]} />\n      <CustomShaderMaterial />\n    </mesh>\n  );\n\n  const FloatingParticles = () => {\n    const particles = Array.from({ length: 50 }, (_,i) => (\n      <mesh key={i} position={[(Math.random()-0.5)*10,(Math.random()-0.5)*10,(Math.random()-0.5)*5]} scale={Math.random()*0.1+0.05}>\n        <sphereGeometry args={[1,8,8]} />\n        <meshBasicMaterial color=\"#84cc16\" transparent opacity={0.6} />\n      </mesh>\n    ));\n    return <group>{particles}</group>;\n  };\n\n  return (\n    <div className=\"relative w-full h-screen overflow-hidden\">\n      <div className=\"absolute inset-0 w-full h-screen\">\n        <Canvas camera={{ position:[0,0,5], fov:75 }} style={{ background:'transparent' }}>\n          <Environment preset=\"dawn\" />\n          <ambientLight intensity={0.5} />\n          <pointLight position={[10,10,10]} intensity={1} />\n          <AnimatedMesh />\n          <FloatingParticles />\n          <OrbitControls enableZoom={false} enablePan={false} enableRotate autoRotate autoRotateSpeed={0.5} />\n        </Canvas>\n      </div>\n      <div className=\"relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4\">\n        <h1 className=\"text-5xl md:text-7xl font-bold text-foreground leading-tight\">\n          Experience the <span className=\"bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent\">Future</span> of Web Technology\n        </h1>\n      </div>\n    </div>\n  );\n}\nHeroSection",
       "tags": ["threejs", "shader", "hero"],
       "dependencies": [
         "@react-three/fiber",
         "three",
         "@react-three/drei",
         "framer-motion"
-      ]
+      ],
+      "imports": [""]
     },
     {
       "id": "hero-motion",
       "title": "Hero Motion",
       "description": "Framer Motion hero header",
-      "path": "components/HeroMotion",
+      "code": "function HeroMotion() {\n  return (\n    <div className=\"relative overflow-hidden rounded-2xl p-10 bg-gradient-to-br from-indigo-600 to-fuchsia-600\">\n      <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className=\"text-4xl font-bold\">\n        Motion Hero\n      </motion.h1>\n      <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className=\"mt-2 text-white/80\">\n        Smooth and GPU-accelerated.\n      </motion.p>\n    </div>\n  );\n}\nHeroMotion",
       "tags": ["motion", "hero"],
-      "dependencies": ["framer-motion"]
+      "dependencies": ["framer-motion"],
+      "imports": [
+        "import { motion } from 'framer-motion';",
+        "import React from 'react';"
+      ]
     },
     {
       "id": "pricing-simple",
       "title": "Pricing (Simple)",
       "description": "Clean pricing cards",
-      "path": "components/PricingSimple",
+      "code": "function PricingSimple() {\n  return (\n    <div className=\"grid sm:grid-cols-2 lg:grid-cols-3 gap-6\">\n      {[\"Basic\",\"Pro\",\"Team\"].map((tier, i) => (\n        <div key={tier} className=\"rounded-2xl p-6 bg-white/5 ring-1 ring-white/10\">\n          <div className=\"text-xl font-semibold\">{tier}</div>\n          <div className=\"mt-2 text-3xl font-bold\">{i * 9 + 9}<span className=\"text-base font-normal text-white/60\">/mo</span></div>\n          <button className=\"mt-4 w-full rounded-xl bg-white/10 hover:bg-white/20 py-2\">Choose</button>\n        </div>\n      ))}\n    </div>\n  );\n}\nPricingSimple",
       "tags": ["pricing"],
-      "dependencies": []
-    },
-    {
-      "id": "button",
-      "title": "Button",
-      "description": "Reusable Tailwind button",
-      "path": "components/Button",
-      "tags": ["ui", "button"],
-      "dependencies": []
+      "dependencies": [],
+      "imports": [""]
     }
   ]
 }
