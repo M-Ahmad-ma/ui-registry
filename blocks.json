@@ -14,7 +14,12 @@
         "@react-three/drei",
         "framer-motion"
       ],
-      "imports": [""]
+      "imports": [
+        "import React from 'react';",
+        "import { Canvas, useFrame } from '@react-three/fiber';",
+        "import { OrbitControls, Environment } from '@react-three/drei';",
+        "import { motion } from 'framer-motion';"
+      ]
     },
     {
       "id": "hero-motion",
@@ -35,7 +40,7 @@
       "code": "function PricingSimple() {\n  return (\n    <div className=\"grid sm:grid-cols-2 lg:grid-cols-3 gap-6\">\n      {[\"Basic\",\"Pro\",\"Team\"].map((tier, i) => (\n        <div key={tier} className=\"rounded-2xl p-6 bg-white/5 ring-1 ring-white/10\">\n          <div className=\"text-xl font-semibold\">{tier}</div>\n          <div className=\"mt-2 text-3xl font-bold\">{i * 9 + 9}<span className=\"text-base font-normal text-white/60\">/mo</span></div>\n          <button className=\"mt-4 w-full rounded-xl bg-white/10 hover:bg-white/20 py-2\">Choose</button>\n        </div>\n      ))}\n    </div>\n  );\n}\nPricingSimple",
       "tags": ["pricing"],
       "dependencies": [],
-      "imports": [""]
+      "imports": ["import React from 'react';"]
     }
   ]
 }
