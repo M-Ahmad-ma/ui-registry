@@ -41,7 +41,6 @@
       "tags": ["pricing"],
       "dependencies": [],
       "imports": ["import React from 'react';"]
-    },
-
+    }
   ]
 }
