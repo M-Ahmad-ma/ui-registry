@@ -42,5 +42,4 @@
       "dependencies": [],
       "imports": ["import React from 'react';"]
     }
-  ]
 }
