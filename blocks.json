@@ -42,6 +42,21 @@
       "tags": ["pricing"],
       "dependencies": [],
       "imports": ["import React from 'react';"]
+    },
+     {
+      "id": "animated-cursor",
+      "title": "Custom Animated Cursor",
+      "description": "A framer-motion powered animated cursor that changes size and shape when hovering over text and interactive elements.",
+      "code": "'use client'\nimport { useEffect, useRef, useState } from \"react\";\nimport { motion, useSpring } from \"framer-motion\";\n\nconst Cursor = ({ color = \"rgba(0,0,0,0.3)\" }) => {\n  const cursorRef = useRef(null);\n  const [cursorStyle, setCursorStyle] = useState({\n    width: 20,\n    height: 20,\n    borderRadius: \"50%\",\n  });\n\n  const mouseX = useSpring(0, { stiffness: 300, damping: 20 });\n  const mouseY = useSpring(0, { stiffness: 300, damping: 20 });\n\n  useEffect(() => {\n    const moveCursor = (e) => {\n      mouseX.set(e.clientX - cursorStyle.width / 2);\n      mouseY.set(e.clientY - cursorStyle.height / 2);\n    };\n\n    const PADDING = 8;\n    const handleMouseOver = (e) => {\n      const target = e.target;\n      if (\n        target instanceof HTMLElement &&\n        [\"SPAN\", \"P\", \"A\", \"H1\", \"H2\", \"H3\", \"H4\", \"H5\", \"H6\", \"BUTTON\"].includes(target.tagName)\n      ) {\n        const rect = target.getBoundingClientRect();\n        const style = window.getComputedStyle(target);\n\n        setCursorStyle({\n          width: rect.width + PADDING * 2,\n          height: rect.height + PADDING * 2,\n          borderRadius: style.borderRadius || \"0px\",\n        });\n      }\n    };\n\n    const handleMouseOut = (e) => {\n      const target = e.target;\n      if (\n        target instanceof HTMLElement &&\n        [\"SPAN\", \"P\", \"A\", \"H1\", \"H2\", \"H3\", \"H4\", \"H5\", \"H6\", \"BUTTON\"].includes(target.tagName)\n      ) {\n        setCursorStyle({\n          width: 20,\n          height: 20,\n          borderRadius: \"50%\",\n        });\n      }\n    };\n\n    window.addEventListener(\"mousemove\", moveCursor);\n    window.addEventListener(\"mouseover\", handleMouseOver);\n    window.addEventListener(\"mouseout\", handleMouseOut);\n\n    return () => {\n      window.removeEventListener(\"mousemove\", moveCursor);\n      window.removeEventListener(\"mouseover\", handleMouseOver);\n      window.removeEventListener(\"mouseout\", handleMouseOut);\n    };\n  }, [cursorStyle.width, cursorStyle.height, mouseX, mouseY]);\n\n  return (\n    <motion.div\n      ref={cursorRef}\n      animate={{\n        width: cursorStyle.width,\n        height: cursorStyle.height,\n        borderRadius: cursorStyle.borderRadius,\n      }}\n      style={{\n        position: \"fixed\",\n        top: 0,\n        left: 0,\n        backgroundColor: color,\n        pointerEvents: \"none\",\n        zIndex: 9999,\n        translateX: mouseX,\n        translateY: mouseY,\n        cursor: \"none\"\n      }}\n      transition={{ type: \"spring\", stiffness: 200, damping: 20 }}\n    />\n  );\n};\n\nexport default Cursor;",
+      "tags": ["cursor", "framer-motion", "ui"],
+      "dependencies": [
+        "react",
+        "framer-motion"
+      ],
+      "imports": [
+        "import { useEffect, useRef, useState } from 'react';",
+        "import { motion, useSpring } from 'framer-motion';"
+      ]
     }
   ]
 }
