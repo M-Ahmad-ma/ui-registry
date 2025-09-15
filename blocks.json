@@ -5,7 +5,7 @@
       "title": "Button",
       "description": "Primary button used across the app",
       "files": ["Button.tsx"],
-      "example": "ButtonExample.tsx",
+      "example": "Examples/ButtonExample.tsx",
       "dependencies": []
     },
     {
