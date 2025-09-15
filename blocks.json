@@ -7,7 +7,7 @@
       "files": ["Button.tsx"],
       "example": "Examples/ButtonExample.tsx",
       "dependencies": []
-    },
+    }
   ]
 }
 
