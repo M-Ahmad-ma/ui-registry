@@ -63,7 +63,7 @@
   "id": "expand-on-hover",
   "title": "Expand On Hover Gallery",
   "description": "A responsive image gallery where images expand smoothly on hover using Framer Motion.",
-  "code": "import { motion } from 'framer-motion';\nimport { useState } from 'react';\n\nconst ExpandOnHover = ({\n  images,\n  activeIndex = 0,\n  width = 300,\n  collapsedWidth = 70,\n  height = 350,\n}) => {\n  const [hoverIndex, setHoverIndex] = useState(null);\n\n  return (\n    <div className=\"w-full h-screen flex items-center justify-center gap-1\">\n      {images.map((img, i) => {\n        const isActive = hoverIndex !== null ? hoverIndex === i : activeIndex === i;\n\n        return (\n          <motion.div\n            key={i}\n            onMouseEnter={() => setHoverIndex(i)}\n            onMouseLeave={() => setHoverIndex(null)}\n            animate={{\n              width: isActive ? width : collapsedWidth,\n              height: height,\n            }}\n            transition={{ type: 'spring', stiffness: 200, damping: 20 }}\n            className=\"bg-black overflow-hidden rounded-xl\"\n          >\n            <img\n              src={img}\n              alt={`Image ${i}`}\n              className=\"w-full h-full object-cover\"\n            />\n          </motion.div>\n        );\n      })}\n    </div>\n  );\n};\n\nexport default ExpandOnHover;",
+  "code": "import { motion } from 'framer-motion';\nimport { useState } from 'react';\n\nconst ExpandOnHover = ({\n  images,\n  activeIndex = 0,\n  width = 300,\n  collapsedWidth = 70,\n  height = 350,\n}) => {\n  const [hoverIndex, setHoverIndex] = useState(null);\n\n  return (\n    <div className=\"w-full h-screen flex items-center justify-center gap-1\">\n      {images.map((img, i) => {\n        const isActive = hoverIndex !== null ? hoverIndex === i : activeIndex === i;\n\n        return (\n          <motion.div\n            key={i}\n            onMouseEnter={() => setHoverIndex(i)}\n            onMouseLeave={() => setHoverIndex(null)}\n            animate={{\n              width: isActive ? width : collapsedWidth,\n              height: height,\n            }}\n            transition={{ type: 'spring', stiffness: 200, damping: 20 }}\n            className=\"bg-black overflow-hidden rounded-xl\"\n          >\n            <img\n              src={img}\n              alt={`Image ${i}`}\n              className=\"w-full h-full object-cover\"\n            />\n          </motion.div>\n        );\n      })}\n    </div>\n  );\n};\n\nvar ExportedComponent = ExpandOnHover;",
   "tags": ["gallery", "hover", "framer-motion", "images"],
   "dependencies": [
     "react",
@@ -73,8 +73,9 @@
     "import { motion } from 'framer-motion';",
     "import { useState } from 'react';"
   ],
-  "example": "import ExpandOnHover from './ExpandOnHover';\n\nconst images = [\n  'https://skiper-ui.com/images/x.com/19.jpeg',\n  'https://skiper-ui.com/images/x.com/1.jpeg',\n  'https://skiper-ui.com/images/x.com/3.jpeg',\n  'https://skiper-ui.com/images/x.com/20.jpeg',\n  'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80',\n  'https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=1200&q=80'\n];\n\nexport const ExpandOnHoverExample = () => (\n  <ExpandOnHover images={images} activeIndex={2} width={280} collapsedWidth={80} height={320} />\n);"
+  "example": "const images = [\n  'https://skiper-ui.com/images/x.com/19.jpeg',\n  'https://skiper-ui.com/images/x.com/1.jpeg',\n  'https://skiper-ui.com/images/x.com/3.jpeg',\n  'https://skiper-ui.com/images/x.com/20.jpeg',\n  'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80',\n  'https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=1200&q=80'\n];\n\nconst ExpandOnHoverExample = () => (\n  <ExpandOnHover images={images} activeIndex={2} width={280} collapsedWidth={80} height={320} />\n);\n\nvar ExportedComponent = ExpandOnHoverExample;"
 }
+
   ]
 }
 
