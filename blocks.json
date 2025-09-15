@@ -58,5 +58,6 @@
         "import { motion, useSpring } from 'framer-motion';"
       ]
     }
+  ]
 }
 
