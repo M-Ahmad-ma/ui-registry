@@ -8,14 +8,6 @@
       "example": "Examples/ButtonExample.tsx",
       "dependencies": []
     },
-    {
-      "id": "card",
-      "title": "Card",
-      "description": "Card component",
-      "files": ["card.tsx"],
-      "example": "card.example.tsx",
-      "dependencies": []
-    }
   ]
 }
 
