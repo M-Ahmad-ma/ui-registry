@@ -57,7 +57,26 @@
         "import { useEffect, useRef, useState } from 'react';",
         "import { motion, useSpring } from 'framer-motion';"
       ]
-    }
+    },
+{
+  "id": "expand-on-hover",
+  "title": "Expand On Hover",
+  "description": "Expanding image gallery with hover interaction",
+  "code": "function ExpandOnHover({ images, activeIndex = 0, width = 300, collapsedWidth = 70, height = 350 }) {\n  const [hoverIndex, setHoverIndex] = React.useState(null);\n  return (\n    <div className='w-full h-screen flex items-center justify-center gap-1'>\n      {images.map((img, i) => {\n        const isActive = hoverIndex !== null ? hoverIndex === i : activeIndex === i;\n        return (\n          <motion.div key={i}\n            onMouseEnter={() => setHoverIndex(i)}\n            onMouseLeave={() => setHoverIndex(null)}\n            animate={{ width: isActive ? width : collapsedWidth, height }}\n            transition={{ type: 'spring', stiffness: 200, damping: 20 }}\n            className='bg-black overflow-hidden rounded-xl'>\n              <img src={img} alt={`Image ${i}`} className='w-full h-full object-cover'/>\n          </motion.div>\n        );\n      })}\n    </div>\n  );\n}\nexport default ExpandOnHover;",
+  "tags": ["gallery", "motion"],
+  "dependencies": ["framer-motion", "react"],
+  "imports": [
+    "import { motion } from 'framer-motion';",
+    "import React from 'react';"
+  ],
+  "previewProps": {
+    "images": [
+      "https://picsum.photos/id/1011/600/350",
+      "https://picsum.photos/id/1012/600/350",
+      "https://picsum.photos/id/1013/600/350"
+    ]
+  }
+}
   ]
 }
 
