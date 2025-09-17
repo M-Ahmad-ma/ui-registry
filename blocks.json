@@ -26,6 +26,24 @@
         "Alert.tsx"
       ],
       "dependencies": []
-    }
+    },
+    {
+      "id": "badge",
+      "title": "badge",
+      "description": "Primary badge used across the app",
+      "files": [
+        "Badge.tsx"
+      ],
+      "dependencies": []
+    },
+
+{
+  "id": "accordion",
+  "title": "Accordion",
+  "description": "Collapsible sections built with React, Tailwind, and Framer Motion.",
+  "files": ["Accordion.tsx"],
+  "example": "Examples/AccordionExample.tsx",
+  "dependencies": ["framer-motion", "lucide-react"]
+}
   ]
 }
