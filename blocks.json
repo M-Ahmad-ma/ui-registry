@@ -4,10 +4,28 @@
       "id": "button",
       "title": "Button",
       "description": "Primary button used across the app",
-      "files": ["Button.tsx"],
-      "example": "Examples/ButtonExample.tsx",
+      "files": [
+        "Button.tsx"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "input",
+      "title": "input",
+      "description": "Primary input used across the app",
+      "files": [
+        "Input.tsx"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "alert",
+      "title": "alert",
+      "description": "Primary alet used across the app",
+      "files": [
+        "Alert.tsx"
+      ],
       "dependencies": []
     }
   ]
 }
-
