@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "alertDialog",
+      "id": "alertdialog",
       "title": "alertDialog",
       "description": "alert Dialog built with React, Tailwind, and Framer Motion.",
       "files": [
