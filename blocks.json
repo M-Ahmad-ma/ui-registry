@@ -36,14 +36,35 @@
       ],
       "dependencies": []
     },
-
-{
-  "id": "accordion",
-  "title": "Accordion",
-  "description": "Collapsible sections built with React, Tailwind, and Framer Motion.",
-  "files": ["Accordion.tsx"],
-  "example": "Examples/AccordionExample.tsx",
-  "dependencies": ["framer-motion", "lucide-react"]
-}
+    {
+      "id": "accordion",
+      "title": "Accordion",
+      "description": "Collapsible sections built with React, Tailwind, and Framer Motion.",
+      "files": [
+        "Accordion.tsx"
+      ],
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ]
+    },
+    {
+      "id": "alertDialog",
+      "title": "alertDialog",
+      "description": "alert Dialog built with React, Tailwind, and Framer Motion.",
+      "files": [
+        "AlertDialog.tsx"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "hoverCard",
+      "title": "hoverCard",
+      "description": "hover card built with React, Tailwind, and Framer Motion.",
+      "files": [
+        "HoverCard.tsx"
+      ],
+      "dependencies": []
+    }
   ]
 }
