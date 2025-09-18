@@ -101,6 +101,15 @@
         "RadioGroup.tsx"
       ],
       "dependencies": []
+    },
+    {
+      "id": "skeleton",
+      "title": "skeleton",
+      "description": "skeleton component built with React, Tailwind",
+      "files": [
+        "Skeleton.tsx"
+      ],
+      "dependencies": []
     }
   ]
 }
