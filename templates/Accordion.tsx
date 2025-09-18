@@ -25,7 +25,7 @@ export function Accordion({ items, defaultOpenId, className }: AccordionProps) {
   }
 
   return (
-    <div className={cn("w-full divide-y divide-gray-200 rounded-lg border", className)}>
+    <div className={cn("w-full divide-y divide-gray-200 rounded-lg", className)}>
       {items.map(item => {
         const isOpen = item.id === openId
         return (
