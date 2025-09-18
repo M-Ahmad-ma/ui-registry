@@ -83,6 +83,24 @@
         "AspectRatio.tsx"
       ],
       "dependencies": []
+    },
+    {
+      "id": "select",
+      "title": "select",
+      "description": "select component built with React, Tailwind",
+      "files": [
+        "Select.tsx"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "radiogroup",
+      "title": "radiogroup",
+      "description": "radio group built with React, Tailwind",
+      "files": [
+        "RadioGroup.tsx"
+      ],
+      "dependencies": []
     }
   ]
 }
