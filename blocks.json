@@ -65,6 +65,24 @@
         "HoverCard.tsx"
       ],
       "dependencies": []
+    },
+    {
+      "id": "textarea",
+      "title": "textarea",
+      "description": "text area built with React, Tailwind",
+      "files": [
+        "TextArea.tsx"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "aspectratio",
+      "title": "aspectratio",
+      "description": "aspect ratio built with React, Tailwind",
+      "files": [
+        "AspectRatio.tsx"
+      ],
+      "dependencies": []
     }
   ]
 }
