@@ -32,7 +32,7 @@ export function Accordion({ items, defaultOpenId, className }: AccordionProps) {
           <div key={item.id}>
             <button
               onClick={() => toggleItem(item.id)}
-              className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium hover:bg-gray-50"
+              className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium "
             >
               <span>{item.title}</span>
               <ChevronDown
