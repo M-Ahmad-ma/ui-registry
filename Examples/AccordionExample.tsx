@@ -1,6 +1,4 @@
-
-
-import { Accordion } from "../components/Accordion";
+import { Accordion } from "@/components/ui/Accordion";
 
 export default function AccordionExample() {
   const items = [

@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Alert, AlertTitle, AlertDescription } from "../components/Alert"
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/Alert"
 import { AlertCircle } from "lucide-react"
 
 export default function AlertExample() {

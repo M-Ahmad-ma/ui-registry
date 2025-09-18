@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Badge } from "../components/Badge"
+import { Badge } from "@/components/Badge"
 import { Check } from "lucide-react"
 
 export default function BadgeExample() {
