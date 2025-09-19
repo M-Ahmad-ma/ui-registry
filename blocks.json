@@ -3,7 +3,7 @@
     {
       "id": "button",
       "title": "Button",
-      "description": "Primary button used across the app",
+      "description": "Primary button used across the app.",
       "files": [
         "Button.tsx"
       ],
@@ -11,8 +11,8 @@
     },
     {
       "id": "input",
-      "title": "input",
-      "description": "Primary input used across the app",
+      "title": "Input",
+      "description": "Primary input used across the app.",
       "files": [
         "Input.tsx"
       ],
@@ -20,8 +20,8 @@
     },
     {
       "id": "alert",
-      "title": "alert",
-      "description": "Primary alet used across the app",
+      "title": "Alert",
+      "description": "Primary alert used across the app.",
       "files": [
         "Alert.tsx"
       ],
@@ -29,8 +29,8 @@
     },
     {
       "id": "badge",
-      "title": "badge",
-      "description": "Primary badge used across the app",
+      "title": "Badge",
+      "description": "Primary badge used across the app.",
       "files": [
         "Badge.tsx"
       ],
@@ -49,36 +49,40 @@
       ]
     },
     {
-      "id": "alertdialog",
-      "title": "alertDialog",
-      "description": "alert Dialog built with React, Tailwind, and Framer Motion.",
+      "id": "alert-dialog",
+      "title": "AlertDialog",
+      "description": "Alert dialog built with React, Tailwind, and Framer Motion.",
       "files": [
         "AlertDialog.tsx"
       ],
-      "dependencies": []
+      "dependencies": [
+        "framer-motion"
+      ]
     },
     {
-      "id": "hoverCard",
-      "title": "hoverCard",
-      "description": "hover card built with React, Tailwind, and Framer Motion.",
+      "id": "hover-card",
+      "title": "HoverCard",
+      "description": "Hover card built with React, Tailwind, and Framer Motion.",
       "files": [
         "HoverCard.tsx"
       ],
-      "dependencies": []
+      "dependencies": [
+        "framer-motion"
+      ]
     },
     {
       "id": "textarea",
-      "title": "textarea",
-      "description": "text area built with React, Tailwind",
+      "title": "TextArea",
+      "description": "Text area built with React, Tailwind.",
       "files": [
         "TextArea.tsx"
       ],
       "dependencies": []
     },
     {
-      "id": "aspectratio",
-      "title": "aspectratio",
-      "description": "aspect ratio built with React, Tailwind",
+      "id": "aspect-ratio",
+      "title": "AspectRatio",
+      "description": "Aspect ratio built with React, Tailwind.",
       "files": [
         "AspectRatio.tsx"
       ],
@@ -86,17 +90,17 @@
     },
     {
       "id": "select",
-      "title": "select",
-      "description": "select component built with React, Tailwind",
+      "title": "Select",
+      "description": "Select component built with React, Tailwind.",
       "files": [
         "Select.tsx"
       ],
       "dependencies": []
     },
     {
-      "id": "radiogroup",
-      "title": "radiogroup",
-      "description": "radio group built with React, Tailwind",
+      "id": "radio-group",
+      "title": "RadioGroup",
+      "description": "Radio group built with React, Tailwind.",
       "files": [
         "RadioGroup.tsx"
       ],
@@ -104,10 +108,19 @@
     },
     {
       "id": "skeleton",
-      "title": "skeleton",
-      "description": "skeleton component built with React, Tailwind",
+      "title": "Skeleton",
+      "description": "Skeleton component built with React, Tailwind.",
       "files": [
         "Skeleton.tsx"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "checkbox",
+      "title": "Checkbox",
+      "description": "A control that allows the user to toggle between checked and not checked.",
+      "files": [
+        "Checkbox.tsx"
       ],
       "dependencies": []
     }
