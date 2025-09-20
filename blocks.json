@@ -168,6 +168,15 @@
         "Sheet.tsx"
       ],
       "dependencies": []
+    },
+    {
+      "id": "drawer",
+      "title": "drawer",
+      "description": "A drawer component for React.",
+      "files": [
+        "Drawer.tsx"
+      ],
+      "dependencies": []
     }
   ]
 }
