@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "alert-dialog",
+      "id": "alertdialog",
       "title": "AlertDialog",
       "description": "Alert dialog built with React, Tailwind, and Framer Motion.",
       "files": [
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "id": "hover-card",
+      "id": "hovercard",
       "title": "HoverCard",
       "description": "Hover card built with React, Tailwind, and Framer Motion.",
       "files": [
@@ -80,7 +80,7 @@
       "dependencies": []
     },
     {
-      "id": "aspect-ratio",
+      "id": "aspectratio",
       "title": "AspectRatio",
       "description": "Aspect ratio built with React, Tailwind.",
       "files": [
@@ -98,7 +98,7 @@
       "dependencies": []
     },
     {
-      "id": "radio-group",
+      "id": "radiogroup",
       "title": "RadioGroup",
       "description": "Radio group built with React, Tailwind.",
       "files": [
