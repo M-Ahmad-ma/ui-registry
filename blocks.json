@@ -132,6 +132,15 @@
         "Tooltip.tsx"
       ],
       "dependencies": []
+    },
+    {
+      "id": "toast",
+      "title": "toast",
+      "description": "An opinionated toast component for React.",
+      "files": [
+        "Toast.tsx"
+      ],
+      "dependencies": []
     }
   ]
 }
