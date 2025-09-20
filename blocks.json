@@ -141,6 +141,24 @@
         "Toast.tsx"
       ],
       "dependencies": []
+    },
+    {
+      "id": "separator",
+      "title": "separator",
+      "description": "Visually or semantically separates content.",
+      "files": [
+        "Separator.tsx"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "slider",
+      "title": "slider",
+      "description": "An input where the user selects a value from within a given range",
+      "files": [
+        "Slider.tsx"
+      ],
+      "dependencies": []
     }
   ]
 }
