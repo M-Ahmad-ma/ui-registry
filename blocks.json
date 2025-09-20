@@ -159,6 +159,15 @@
         "Slider.tsx"
       ],
       "dependencies": []
+    },
+    {
+      "id": "sheet",
+      "title": "sheet",
+      "description": "npm dlx shadcn@latest add sheet",
+      "files": [
+        "Sheet.tsx"
+      ],
+      "dependencies": []
     }
   ]
 }
