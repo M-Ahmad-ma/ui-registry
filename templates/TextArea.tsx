@@ -1,34 +1,73 @@
 
-"use client";
+"use client"
 
-import * as React from "react";
-import { cn } from "@/lib/utils/cn";
+import * as React from "react"
+import { cn } from "@/lib/utils/cn"
 
 export interface TextAreaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
-  size?: "sm" | "md" | "lg";
-  variant?: "default" | "ghost";
-  error?: boolean;
+  label?: string
+  error?: string
+  success?: string
+  helperText?: string
 }
 
-export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
-  ({ size = "md", variant = "default", error = false, className, ...props }, ref) => {
-    return (
-      <textarea
-        ref={ref}
-        className={cn(
-          "block w-full rounded-md border bg-white px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed",
-          size === "sm" && "px-2 py-1 text-sm",
-          size === "md" && "px-3 py-2 text-base",
-          size === "lg" && "px-4 py-3 text-lg",
-          variant === "ghost" && "bg-transparent border-none focus:ring-0 focus:border-gray-300",
-          error && "border-red-500 focus:ring-red-500",
-          className
-        )}
-        {...props}
-      />
-    );
-  }
-);
+const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
+  ({ className, label, error, success, helperText, disabled, id, ...props }, ref) => {
+    const textAreaId = id || React.useId()
 
-TextArea.displayName = "TextArea";
+    return (
+      <div className="flex flex-col gap-1.5">
+        {label && (
+          <label
+            htmlFor={textAreaId}
+            className="text-sm font-medium text-primary-foreground"
+          >
+            {label}
+          </label>
+        )}
+
+        <textarea
+          id={textAreaId}
+          ref={ref}
+          disabled={disabled}
+          className={cn(
+            "flex min-h-[80px] w-full rounded-md border bg-foreground px-3 py-2 text-sm",
+            "placeholder:text-muted-foreground",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+            "disabled:cursor-not-allowed disabled:opacity-50",
+
+            error &&
+              "border-destructive focus-visible:ring-destructive text-destructive",
+            success &&
+              "border-green-500 focus-visible:ring-green-500 text-foreground",
+            !error &&
+              !success &&
+              "border-input focus-visible:ring-ring text-foreground",
+
+            className
+          )}
+          {...props}
+        />
+
+        {(error || success || helperText) && (
+          <p
+            className={cn(
+              "text-xs",
+              error && "text-destructive",
+              success && "text-green-600",
+              !error && !success && "text-muted-foreground"
+            )}
+          >
+            {error || success || helperText}
+          </p>
+        )}
+      </div>
+    )
+  }
+)
+
+TextArea.displayName = "TextArea"
+
+export { TextArea }
+

@@ -163,7 +163,7 @@
     {
       "id": "sheet",
       "title": "sheet",
-      "description": "npm dlx shadcn@latest add sheet",
+      "description": "sheet component for react",
       "files": [
         "Sheet.tsx"
       ],
