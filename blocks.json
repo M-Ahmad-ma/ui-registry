@@ -7,7 +7,8 @@
       "files": [
         "Button.tsx"
       ],
-      "dependencies": []
+      "dependencies": [],
+      "usage": "<Button variant=\"default\">Click me</Button>"
     },
     {
       "id": "input",
@@ -16,7 +17,8 @@
       "files": [
         "Input.tsx"
       ],
-      "dependencies": []
+      "dependencies": [],
+      "usage": "<Input type=\"text\" placeholder=\"Enter your name\" />"
     },
     {
       "id": "alert",
@@ -25,7 +27,8 @@
       "files": [
         "Alert.tsx"
       ],
-      "dependencies": []
+      "dependencies": [],
+      "usage": "<Alert variant=\"destructive\">Something went wrong!</Alert>"
     },
     {
       "id": "badge",
@@ -34,7 +37,8 @@
       "files": [
         "Badge.tsx"
       ],
-      "dependencies": []
+      "dependencies": [],
+      "usage": "<Badge variant=\"secondary\">New</Badge>"
     },
     {
       "id": "accordion",
@@ -46,7 +50,8 @@
       "dependencies": [
         "framer-motion",
         "lucide-react"
-      ]
+      ],
+      "usage": "<Accordion items={[{title: 'Section 1', content: 'Content 1'}]} />"
     },
     {
       "id": "alertdialog",
@@ -57,7 +62,8 @@
       ],
       "dependencies": [
         "framer-motion"
-      ]
+      ],
+      "usage": "<AlertDialog open={true} onOpenChange={() => {}}>Are you sure?</AlertDialog>"
     },
     {
       "id": "hovercard",
@@ -68,7 +74,8 @@
       ],
       "dependencies": [
         "framer-motion"
-      ]
+      ],
+      "usage": "<HoverCard trigger={<Button>Hover me</Button>}>Extra info here</HoverCard>"
     },
     {
       "id": "textarea",
@@ -77,7 +84,8 @@
       "files": [
         "TextArea.tsx"
       ],
-      "dependencies": []
+      "dependencies": [],
+      "usage": "<TextArea placeholder=\"Write something...\" />"
     },
     {
       "id": "aspectratio",
@@ -86,7 +94,8 @@
       "files": [
         "AspectRatio.tsx"
       ],
-      "dependencies": []
+      "dependencies": [],
+      "usage": "<AspectRatio ratio={16/9}><img src=\"/image.jpg\" alt=\"demo\" /></AspectRatio>"
     },
     {
       "id": "select",
@@ -95,7 +104,8 @@
       "files": [
         "Select.tsx"
       ],
-      "dependencies": []
+      "dependencies": [],
+      "usage": "<Select options={[{value:'1', label:'One'}]} value='1' onChange={()=>{}} />"
     },
     {
       "id": "radiogroup",
@@ -104,7 +114,8 @@
       "files": [
         "RadioGroup.tsx"
       ],
-      "dependencies": []
+      "dependencies": [],
+      "usage": "<RadioGroup options={[{value:'a', label:'A'}]} value='a' onChange={()=>{}} />"
     },
     {
       "id": "skeleton",
@@ -113,7 +124,8 @@
       "files": [
         "Skeleton.tsx"
       ],
-      "dependencies": []
+      "dependencies": [],
+      "usage": "<Skeleton className=\"w-32 h-8\" />"
     },
     {
       "id": "checkbox",
@@ -122,61 +134,68 @@
       "files": [
         "Checkbox.tsx"
       ],
-      "dependencies": []
+      "dependencies": [],
+      "usage": "<Checkbox label=\"Accept terms\" checked={true} />"
     },
     {
       "id": "tooltip",
-      "title": "tooltip",
+      "title": "Tooltip",
       "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
       "files": [
         "Tooltip.tsx"
       ],
-      "dependencies": []
+      "dependencies": [],
+      "usage": "<Tooltip content=\"More info\"><Button>Hover</Button></Tooltip>"
     },
     {
       "id": "toast",
-      "title": "toast",
+      "title": "Toast",
       "description": "An opinionated toast component for React.",
       "files": [
         "Toast.tsx"
       ],
-      "dependencies": []
+      "dependencies": [],
+      "usage": "toast.success('Profile updated successfully!')"
     },
     {
       "id": "separator",
-      "title": "separator",
+      "title": "Separator",
       "description": "Visually or semantically separates content.",
       "files": [
         "Separator.tsx"
       ],
-      "dependencies": []
+      "dependencies": [],
+      "usage": "<Separator className=\"my-4\" />"
     },
     {
       "id": "slider",
-      "title": "slider",
+      "title": "Slider",
       "description": "An input where the user selects a value from within a given range",
       "files": [
         "Slider.tsx"
       ],
-      "dependencies": []
+      "dependencies": [],
+      "usage": "<Slider min={0} max={100} value={50} />"
     },
     {
       "id": "sheet",
-      "title": "sheet",
-      "description": "sheet component for react",
+      "title": "Sheet",
+      "description": "Sheet component for React.",
       "files": [
         "Sheet.tsx"
       ],
-      "dependencies": []
+      "dependencies": [],
+      "usage": "<Sheet open={true} onOpenChange={() => {}}>Some content</Sheet>"
     },
     {
       "id": "drawer",
-      "title": "drawer",
+      "title": "Drawer",
       "description": "A drawer component for React.",
       "files": [
         "Drawer.tsx"
       ],
-      "dependencies": []
+      "dependencies": [],
+      "usage": "<Drawer open={true} onOpenChange={() => {}}>Drawer Content</Drawer>"
     }
   ]
 }
