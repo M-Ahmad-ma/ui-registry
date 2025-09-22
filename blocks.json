@@ -196,6 +196,16 @@
       ],
       "dependencies": [],
       "usage": "<Drawer open={true} onOpenChange={() => {}}>Drawer Content</Drawer>"
+    },
+    {
+      "id": "card",
+      "title": "Card",
+      "description": "Displays a card with header, content, and footer",
+      "files": [
+        "Card.tsx"
+      ],
+      "dependencies": [],
+      "usage": "import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from \"@/components/ui/card\";\n\n<Card>\n  <CardHeader>\n    <CardTitle>Card Title</CardTitle>\n    <CardDescription>Card Description</CardDescription>\n    <CardAction>Card Action</CardAction>\n  </CardHeader>\n  <CardContent>\n    <p>Card Content</p>\n  </CardContent>\n  <CardFooter>\n    <p>Card Footer</p>\n  </CardFooter>\n</Card>"
     }
   ]
 }
