@@ -7,7 +7,9 @@
       "files": [
         "Button.tsx"
       ],
-      "dependencies": [],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "usage": "<Button variant=\"default\">Click me</Button>"
     },
     {
@@ -27,7 +29,9 @@
       "files": [
         "Alert.tsx"
       ],
-      "dependencies": [],
+      "dependencies": [
+        "lucide-react"
+      ],
       "usage": "<Alert variant=\"destructive\">Something went wrong!</Alert>"
     },
     {
@@ -37,7 +41,9 @@
       "files": [
         "Badge.tsx"
       ],
-      "dependencies": [],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "usage": "<Badge variant=\"secondary\">New</Badge>"
     },
     {
@@ -104,7 +110,9 @@
       "files": [
         "Select.tsx"
       ],
-      "dependencies": [],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "usage": "<Select options={[{value:'1', label:'One'}]} value='1' onChange={()=>{}} />"
     },
     {
@@ -114,7 +122,9 @@
       "files": [
         "RadioGroup.tsx"
       ],
-      "dependencies": [],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "usage": "<RadioGroup options={[{value:'a', label:'A'}]} value='a' onChange={()=>{}} />"
     },
     {
@@ -134,7 +144,9 @@
       "files": [
         "Checkbox.tsx"
       ],
-      "dependencies": [],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "usage": "<Checkbox label=\"Accept terms\" checked={true} />"
     },
     {
@@ -144,7 +156,9 @@
       "files": [
         "Tooltip.tsx"
       ],
-      "dependencies": [],
+      "dependencies": [
+        "framer-motion"
+      ],
       "usage": "<Tooltip content=\"More info\"><Button>Hover</Button></Tooltip>"
     },
     {
@@ -154,7 +168,9 @@
       "files": [
         "Toast.tsx"
       ],
-      "dependencies": [],
+      "dependencies": [
+        "framer-motion"
+      ],
       "usage": "toast.success('Profile updated successfully!')"
     },
     {
@@ -174,7 +190,9 @@
       "files": [
         "Slider.tsx"
       ],
-      "dependencies": [],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "usage": "<Slider min={0} max={100} value={50} />"
     },
     {
@@ -184,7 +202,9 @@
       "files": [
         "Sheet.tsx"
       ],
-      "dependencies": [],
+      "dependencies": [
+        "framer-motion"
+      ],
       "usage": "<Sheet open={true} onOpenChange={() => {}}>Some content</Sheet>"
     },
     {
@@ -194,7 +214,9 @@
       "files": [
         "Drawer.tsx"
       ],
-      "dependencies": [],
+      "dependencies": [
+        "framer-motion"
+      ],
       "usage": "<Drawer open={true} onOpenChange={() => {}}>Drawer Content</Drawer>"
     },
     {
@@ -204,7 +226,9 @@
       "files": [
         "Card.tsx"
       ],
-      "dependencies": [],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "usage": "import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from \"@/components/ui/card\";\n\n<Card>\n  <CardHeader>\n    <CardTitle>Card Title</CardTitle>\n    <CardDescription>Card Description</CardDescription>\n    <CardAction>Card Action</CardAction>\n  </CardHeader>\n  <CardContent>\n    <p>Card Content</p>\n  </CardContent>\n  <CardFooter>\n    <p>Card Footer</p>\n  </CardFooter>\n</Card>"
     }
   ]
