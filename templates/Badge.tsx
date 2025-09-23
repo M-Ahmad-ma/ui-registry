@@ -1,21 +1,24 @@
-
 "use client"
 
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils/cn"
 
-// Badge variants using CVA
 const badgeVariants = cva(
   "inline-flex items-center font-medium leading-none select-none transition-colors",
   {
     variants: {
       variant: {
-        default: "bg-gray-100 text-gray-800 border border-transparent",
-        secondary: "bg-gray-50 text-gray-700 border border-gray-200",
-        destructive: "bg-red-100 text-red-800 border border-red-200",
-        outline: "bg-transparent text-gray-800 border border-gray-300",
-        ghost: "bg-transparent text-gray-700/90",
+        default:
+          "bg-primary text-primary-foreground border border-transparent",
+        secondary:
+          "bg-secondary text-secondary-foreground border border-transparent",
+        destructive:
+          "bg-destructive text-destructive-foreground border border-transparent",
+        outline:
+          "bg-transparent text-foreground border border-border",
+        ghost:
+          "bg-transparent text-foreground",
       },
       size: {
         sm: "px-2 py-0.5 text-xs gap-1",
@@ -30,20 +33,12 @@ const badgeVariants = cva(
         true: "gap-1.5",
         false: "",
       },
-      dotColor: {
-        default: "bg-gray-700",
-        secondary: "bg-gray-500",
-        destructive: "bg-red-600",
-        ghost: "bg-gray-700",
-        outline: "bg-gray-700",
-      },
     },
     defaultVariants: {
       variant: "default",
       size: "md",
       rounded: "md",
       dot: false,
-      dotColor: "default",
     },
   }
 )
@@ -55,49 +50,23 @@ export interface BadgeProps
 }
 
 export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
-  (
-    {
-      className,
-      variant,
-      size,
-      rounded,
-      dot,
-      dotColor,
-      asChild = false,
-      children,
-      ...props
-    },
-    ref
-  ) => {
-    if (asChild && React.isValidElement(children)) {
-      return React.cloneElement(children as React.ReactElement, {
-        ref,
-        className: cn(
-          badgeVariants({ variant, size, rounded, dot }),
-          (children as React.ReactElement).props.className,
-          className
-        ),
-        ...props,
-      })
-    }
+  ({ className, variant, size, rounded, dot, asChild = false, children, ...props }, ref) => {
+    const Comp = asChild ? "span" : "span"
 
     return (
-      <span
+      <Comp
         ref={ref}
         className={cn(badgeVariants({ variant, size, rounded, dot }), className)}
         {...props}
       >
         {dot && (
           <span
-            className={cn(
-              "h-2 w-2 rounded-full shrink-0",
-              badgeVariants({ dotColor: variant as any }) // map dot color from variant
-            )}
+            className="h-2 w-2 rounded-full shrink-0 bg-current"
             aria-hidden
           />
         )}
         {children}
-      </span>
+      </Comp>
     )
   }
 )
