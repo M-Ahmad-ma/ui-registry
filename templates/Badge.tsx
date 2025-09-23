@@ -1,5 +1,3 @@
-
-
 "use client"
 
 import * as React from "react"
@@ -11,16 +9,11 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          "bg-gray-100 text-gray-800 border border-transparent",
-        secondary:
-          "bg-gray-50 text-gray-700 border border-gray-200",
-        destructive:
-          "bg-red-100 text-red-800 border border-red-200",
-        outline:
-          "bg-transparent text-gray-800 border border-gray-300",
-        ghost:
-          "bg-transparent text-gray-700/90",
+        default: "bg-gray-100 text-gray-800 border border-transparent",
+        secondary: "bg-gray-50 text-gray-700 border border-gray-200",
+        destructive: "bg-red-100 text-red-800 border border-red-200",
+        outline: "bg-transparent text-gray-800 border border-gray-300",
+        ghost: "bg-transparent text-gray-700/90",
       },
       size: {
         sm: "px-2 py-0.5 text-xs gap-1",
@@ -32,7 +25,7 @@ const badgeVariants = cva(
         full: "rounded-full",
       },
       dot: {
-        true: "pl-1.5", // give space for dot
+        true: "pl-1.5", 
         false: "",
       },
     },
@@ -48,11 +41,23 @@ const badgeVariants = cva(
 export interface BadgeProps
   extends React.HTMLAttributes<HTMLSpanElement>,
     VariantProps<typeof badgeVariants> {
-  children?: React.ReactNode
+  asChild?: boolean
 }
 
 export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
-  ({ className, children, variant, size, rounded, dot, ...props }, ref) => {
+  ({ className, variant, size, rounded, dot, asChild = false, children, ...props }, ref) => {
+    if (asChild && React.isValidElement(children)) {
+      return React.cloneElement(children as React.ReactElement, {
+        ref,
+        className: cn(
+          badgeVariants({ variant, size, rounded, dot }),
+          (children as React.ReactElement).props.className,
+          className
+        ),
+        ...props,
+      })
+    }
+
     return (
       <span
         ref={ref}
@@ -74,7 +79,7 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
             aria-hidden
           />
         )}
-        <span>{children}</span>
+        {children}
       </span>
     )
   }
