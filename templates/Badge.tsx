@@ -1,9 +1,11 @@
+
 "use client"
 
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils/cn"
 
+// Badge variants using CVA
 const badgeVariants = cva(
   "inline-flex items-center font-medium leading-none select-none transition-colors",
   {
@@ -25,8 +27,15 @@ const badgeVariants = cva(
         full: "rounded-full",
       },
       dot: {
-        true: "pl-1.5", 
+        true: "gap-1.5",
         false: "",
+      },
+      dotColor: {
+        default: "bg-gray-700",
+        secondary: "bg-gray-500",
+        destructive: "bg-red-600",
+        ghost: "bg-gray-700",
+        outline: "bg-gray-700",
       },
     },
     defaultVariants: {
@@ -34,6 +43,7 @@ const badgeVariants = cva(
       size: "md",
       rounded: "md",
       dot: false,
+      dotColor: "default",
     },
   }
 )
@@ -45,7 +55,20 @@ export interface BadgeProps
 }
 
 export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
-  ({ className, variant, size, rounded, dot, asChild = false, children, ...props }, ref) => {
+  (
+    {
+      className,
+      variant,
+      size,
+      rounded,
+      dot,
+      dotColor,
+      asChild = false,
+      children,
+      ...props
+    },
+    ref
+  ) => {
     if (asChild && React.isValidElement(children)) {
       return React.cloneElement(children as React.ReactElement, {
         ref,
@@ -67,14 +90,8 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
         {dot && (
           <span
             className={cn(
-              "h-2 w-2 rounded-full",
-              variant === "default" || variant === "ghost"
-                ? "bg-gray-700"
-                : variant === "secondary"
-                ? "bg-gray-500"
-                : variant === "destructive"
-                ? "bg-red-600"
-                : "bg-gray-700"
+              "h-2 w-2 rounded-full shrink-0",
+              badgeVariants({ dotColor: variant as any }) // map dot color from variant
             )}
             aria-hidden
           />
