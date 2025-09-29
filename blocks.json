@@ -232,11 +232,11 @@
       "usage": "import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from \"@/components/ui/card\";\n\n<Card>\n  <CardHeader>\n    <CardTitle>Card Title</CardTitle>\n    <CardDescription>Card Description</CardDescription>\n    <CardAction>Card Action</CardAction>\n  </CardHeader>\n  <CardContent>\n    <p>Card Content</p>\n  </CardContent>\n  <CardFooter>\n    <p>Card Footer</p>\n  </CardFooter>\n</Card>"
     },
     {
-      "id": "commanddialog",
-      "title": "commanddialog",
+      "id": "command",
+      "title": "command",
       "description": "command component for react",
       "files": [
-        "CommandDialog.tsx"
+        "Command.tsx"
       ],
       "dependencies": [
         "framer-motion"
