@@ -234,14 +234,13 @@
     {
       "id": "commanddialog",
       "title": "commanddialog",
-      "description": "Fast, Composable, unstyled command menu for react",
+      "description": "command component for react",
       "files": [
         "CommandDialog.tsx"
       ],
       "dependencies": [
         "framer-motion"
-      ],
-      "usage": "import { CommandDialog } from './CommandDialog'  <CommandDialog open={open} onOpenChange={setOpen} groups={groups} />"    
+      ]
     }
   ]
 }
