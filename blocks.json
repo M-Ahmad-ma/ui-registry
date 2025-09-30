@@ -243,12 +243,14 @@
       ]
     },
     {
-  "id": "label",
-  "title": "Label",
-  "description": "Renders an accessible label associated with controls.",
-  "files": ["Label.tsx"],
-  "dependencies": [],
-  "usage": "import { Label } from '@/components/ui/Label'; \n<Label htmlFor='email'>Your email address</Label>"
-}
+      "id": "label",
+      "title": "Label",
+      "description": "Renders an accessible label associated with controls.",
+      "files": [
+        "Label.tsx"
+      ],
+      "dependencies": [],
+      "usage": "import { Label } from '@/components/ui/Label'; \n<Label htmlFor='email'>Your email address</Label>"
+    }
   ]
 }
