@@ -247,12 +247,12 @@
       "title": "label",
       "description": "Renders an accessible label associated with controls.",
       "files": [
-        "Label.tsx"
+        "Label.tsx"    
       ],
       "dependencies": [
         ""
-      ],
-      "usage": "import { Label } from '@/components/ui/Label'; <Label htmlFor='email'>Your email address</Label>"
+      ],  
+      "usage": "import { Label } from '@/components/ui/Label'; \n <Label htmlFor='email'>Your email address</Label>"
     }
   ]
 }
