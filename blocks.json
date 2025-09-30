@@ -241,6 +241,18 @@
       "dependencies": [
         "framer-motion"
       ]
+    },
+    {
+      "id": "label",
+      "title": "label",
+      "description": "Renders an accessible label associated with controls.",
+      "files": [
+        "Label.tsx"
+      ],
+      "dependencies": [
+        ""
+      ],
+      "usage": ""
     }
   ]
 }
