@@ -250,7 +250,7 @@
         "Label.tsx"
       ],
       "dependencies": [],
-      "usage": "import { Label } from '@/components/ui/Label'; \n<Label htmlFor='email'>Your email address</Label>"
+      "usage": "import { Label } from '@/components/ui/Label';\n<Label htmlFor='email'>Your email address</Label>"
     }
   ]
 }
