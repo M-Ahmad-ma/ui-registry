@@ -252,7 +252,7 @@
       "dependencies": [
         ""
       ],
-      "usage": ""
+      "usage": "import { Label } from '@/components/ui/Label'; <Label htmlFor='email'>Your email address</Label>"
     }
   ]
 }
