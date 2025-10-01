@@ -3,7 +3,7 @@
 
 import * as React from "react"
 import { ChevronRight, MoreHorizontal } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils/cn"
 
 interface BreadcrumbProps extends React.HTMLAttributes<HTMLElement> {
   separator?: React.ReactNode
