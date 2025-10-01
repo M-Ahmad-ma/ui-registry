@@ -1,5 +1,3 @@
-
-// examples/TooltipExample.tsx
 "use client";
 
 import Tooltip from "@/components/ui/Tooltip";

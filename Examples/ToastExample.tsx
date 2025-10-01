@@ -29,7 +29,7 @@ export default function ToastExampleInner() {
             description: "Something went wrong.",
             variant: "error",
             duration: 5000,
-            action: { label: "Retry", onClick: (id) => { /* do something */ dismiss(id); } },
+            action: { label: "Retry", onClick: (id) =>  dismiss(id); } },
           })
         }
       >

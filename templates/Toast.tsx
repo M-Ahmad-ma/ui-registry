@@ -39,11 +39,7 @@ function genId(prefix = "toast") {
   return `${prefix}-${Date.now().toString(36)}-${idCounter}`;
 }
 
-/**
- * ToastProvider - wraps the app and provides `useToast()` hook.
- * - position: where the stack appears
- * - containerClassName: extra classes for toaster container
- */
+
 export function ToastProvider({
   children,
   position = "top-right",
@@ -122,9 +118,7 @@ export function useToast() {
   return ctx;
 }
 
-/** Convenience singleton-ish API: call `toast()` outside React components by importing. 
- * Internally it writes to the provider via a small mutable ref. This is useful but optional.
- */
+
 const _globalRef: { current: ToastContextValue | null } = { current: null };
 
 export function bindToast(ctx: ToastContextValue | null) {
