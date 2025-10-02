@@ -13,36 +13,15 @@ type Size = "sm" | "md" | "lg" | "full";
 export interface SheetProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  /**
-   * Placement of the sheet (which edge it slides from).
-   */
   position?: Position;
-  /**
-   * Size preset for width (when sliding horizontally) or height (when vertical).
-   */
   size?: Size;
-  /**
-   * Additional classes for the panel
-   */
   panelClassName?: string;
-  /**
-   * Additional classes for the overlay
-   */
   overlayClassName?: string;
-  /**
-   * Close on overlay click (default true)
-   */
   closeOnOverlayClick?: boolean;
   children?: React.ReactNode;
-  /**
-   * Provide a custom id for the sheet panel (useful for aria)
-   */
   id?: string;
 }
 
-/**
- * Small utility to find focusable elements inside a container
- */
 function getFocusableElements(el: HTMLElement | null) {
   if (!el) return [];
   return Array.from(
@@ -52,16 +31,6 @@ function getFocusableElements(el: HTMLElement | null) {
   ).filter((e) => !e.hasAttribute("disabled") && !e.getAttribute("aria-hidden"));
 }
 
-/**
- * Sheet component
- *
- * Usage:
- * <Sheet open={open} onOpenChange={setOpen} position="right" size="md">
- *   <SheetHeader>Title</SheetHeader>
- *   <div>content</div>
- *   <SheetFooter>actions</SheetFooter>
- * </Sheet>
- */
 export function Sheet({
   open,
   onOpenChange,
@@ -76,7 +45,6 @@ export function Sheet({
   const panelRef = useRef<HTMLDivElement | null>(null);
   const lastActiveRef = useRef<HTMLElement | null>(null);
 
-  // body lock
   useEffect(() => {
     if (open) {
       const prev = document.body.style.overflow;
@@ -88,21 +56,17 @@ export function Sheet({
     return;
   }, [open]);
 
-  // remember last active element, restore focus on close
   useEffect(() => {
     if (open) {
       lastActiveRef.current = document.activeElement as HTMLElement | null;
-      // focus the panel after mount
       setTimeout(() => {
         panelRef.current?.focus();
       }, 50);
     } else {
-      // restore focus
       lastActiveRef.current?.focus?.();
     }
   }, [open]);
 
-  // Escape handling & focus trap
   useEffect(() => {
     if (!open) return;
 
@@ -139,20 +103,17 @@ export function Sheet({
     return () => document.removeEventListener("keydown", onKey);
   }, [open, onOpenChange]);
 
-  // portal root
   const portalRoot =
     typeof window !== "undefined" ? document.getElementById("__next") ?? document.body : null;
 
   if (!portalRoot) return null;
 
-  // size classes map (for horizontal slide)
   const horizontalSize: Record<Size, string> = {
     sm: "w-80",
     md: "w-96",
     lg: "w-[36rem]",
     full: "w-full",
   };
-  // size classes for vertical (height)
   const verticalSize: Record<Size, string> = {
     sm: "h-48",
     md: "h-64",
@@ -160,7 +121,6 @@ export function Sheet({
     full: "h-full",
   };
 
-  // panel base position classes
   const positionPanelClass = {
     right: cn("right-0 top-0 h-full", horizontalSize[size]),
     left: cn("left-0 top-0 h-full", horizontalSize[size]),
@@ -198,7 +158,6 @@ export function Sheet({
     <AnimatePresence>
       {open && (
         <div className="fixed inset-0 z-50 pointer-events-none">
-          {/* overlay */}
           <motion.div
             className={cn(
               "absolute inset-0 bg-black/50 backdrop-blur-sm",
@@ -215,7 +174,6 @@ export function Sheet({
             aria-hidden
           />
 
-          {/* panel container */}
           <motion.div
             className={cn(
               "absolute overflow-auto bg-transparent",
@@ -235,7 +193,7 @@ export function Sheet({
               role="dialog"
               aria-modal="true"
               className={cn(
-                "h-full bg-white dark:bg-slate-900 shadow-xl flex flex-col outline-none",
+                "h-full bg-primary-foreground dark:bg-primary-foreground shadow-xl flex flex-col outline-none",
                 panelClassName
               )}
             >
@@ -263,7 +221,6 @@ export function Sheet({
 
 export default Sheet;
 
-/** Helpers for header/footer so child authors can compose easily */
 export function SheetHeader({ children, className }: { children?: React.ReactNode; className?: string }) {
   return <div className={cn("mb-4 flex items-start justify-between gap-4", className)}>{children}</div>;
 }
