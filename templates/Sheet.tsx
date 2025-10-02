@@ -19,7 +19,7 @@ export interface SheetProps {
   overlayClassName?: string;
   closeOnOverlayClick?: boolean;
   children?: React.ReactNode;
-  id?: string;
+  id?: string
 }
 
 function getFocusableElements(el: HTMLElement | null) {
