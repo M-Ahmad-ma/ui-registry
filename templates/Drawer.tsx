@@ -10,21 +10,13 @@ import { cn } from "@/lib/utils/cn";
 export interface DrawerProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  /**
-   * Drawer height preset
-   */
+  
   size?: "sm" | "md" | "lg" | "full";
-  /**
-   * Additional classes for the drawer panel
-   */
+  
   panelClassName?: string;
-  /**
-   * Additional classes for the overlay
-   */
+  
   overlayClassName?: string;
-  /**
-   * Whether clicking overlay closes drawer
-   */
+ 
   closeOnOverlayClick?: boolean;
   children?: React.ReactNode;
   id?: string;
@@ -43,7 +35,6 @@ export function Drawer({
   const panelRef = useRef<HTMLDivElement | null>(null);
   const lastActiveRef = useRef<HTMLElement | null>(null);
 
-  // lock scroll
   useEffect(() => {
     if (open) {
       const prev = document.body.style.overflow;
@@ -54,7 +45,6 @@ export function Drawer({
     }
   }, [open]);
 
-  // restore focus
   useEffect(() => {
     if (open) {
       lastActiveRef.current = document.activeElement as HTMLElement;
@@ -66,7 +56,6 @@ export function Drawer({
     }
   }, [open]);
 
-  // esc handler
   useEffect(() => {
     if (!open) return;
     const handler = (e: KeyboardEvent) => {
@@ -91,7 +80,6 @@ export function Drawer({
     <AnimatePresence>
       {open && (
         <div className="fixed inset-0 z-50 pointer-events-none">
-          {/* Overlay */}
           <motion.div
             className={cn("absolute inset-0 bg-black/50", overlayClassName)}
             initial={{ opacity: 0 }}
@@ -102,7 +90,6 @@ export function Drawer({
             style={{ pointerEvents: "auto" }}
           />
 
-          {/* Panel */}
           <motion.div
             ref={panelRef}
             id={id}
@@ -110,7 +97,7 @@ export function Drawer({
             role="dialog"
             aria-modal="true"
             className={cn(
-              "absolute bottom-0 left-0 w-full bg-white dark:bg-slate-900 rounded-t-xl shadow-lg outline-none flex flex-col",
+              "absolute bottom-0 left-0 w-full bg-primary-foreground dark:bg-primary-foreground rounded-t-xl shadow-lg outline-none flex flex-col",
               sizeClasses[size],
               panelClassName
             )}
@@ -120,7 +107,6 @@ export function Drawer({
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             style={{ pointerEvents: "auto" }}
           >
-            {/* Grab handle / Close */}
             <div className="flex items-center justify-between px-4 py-2 border-b border-gray-200 dark:border-gray-700">
               <div className="mx-auto h-1.5 w-12 rounded-full bg-gray-300 dark:bg-gray-600" />
               <button
@@ -132,7 +118,6 @@ export function Drawer({
               </button>
             </div>
 
-            {/* Content */}
             <div className="flex-1 overflow-auto p-4">{children}</div>
           </motion.div>
         </div>

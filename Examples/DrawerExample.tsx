@@ -3,18 +3,19 @@
 
 import React from "react";
 import Drawer from "@/components/ui/Drawer";
+import { Button } from "@/components/ui/Button"
 
 export default function DrawerExample() {
   const [open, setOpen] = React.useState(false);
 
   return (
     <div className="p-8">
-      <button
+      <Button
         onClick={() => setOpen(true)}
         className="px-4 py-2 rounded bg-indigo-600 text-white"
       >
         Open Drawer
-      </button>
+      </Button>
 
       <Drawer open={open} onOpenChange={setOpen} size="md">
         <div className="space-y-4">
@@ -26,9 +27,9 @@ export default function DrawerExample() {
             className="w-full border rounded px-3 py-2"
             placeholder="Input inside drawer"
           />
-          <button className="px-3 py-2 rounded bg-green-600 text-white">
+          <Button className="px-3 py-2 rounded bg-green-600 text-white">
             Save
-          </button>
+          </Button>
         </div>
       </Drawer>
     </div>
