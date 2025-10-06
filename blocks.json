@@ -273,7 +273,18 @@
         "import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/ui/empty'",
         "<Empty>\\n  <EmptyHeader>\\n    <EmptyMedia variant='icon'>\\n      <Icon />\\n    </EmptyMedia>\\n  </EmptyHeader>\\n  <EmptyTitle>No data</EmptyTitle>\\n  <EmptyDescription>No data found</EmptyDescription>\\n  <EmptyContent>\\n    <Button>Add data</Button>\\n  </EmptyContent>\\n</Empty>"
       ]
-    }
+    },
+{
+  "id": "spinner",
+  "title": "Spinner",
+  "description": "An indicator that can be used to show a loading state.",
+  "files": ["Spinner.tsx"],
+  "dependencies": ["lucide-react"],
+  "usage": [
+    "import { Spinner } from '@/components/ui/spinner'",
+    "<div><Spinner /></div>"
+  ]
+}
   ]
 }
 
