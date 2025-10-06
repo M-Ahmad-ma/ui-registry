@@ -12,7 +12,7 @@ import {
 import { Input } from "@/components/ui/Input"
 import { Label } from "@/components/ui/Label"
 
-export function DialogDemo() {
+export function DialogExample() {
 
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
