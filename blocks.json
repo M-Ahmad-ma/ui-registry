@@ -6,7 +6,10 @@
       "description": "Primary button used across the app.",
       "files": ["Button.tsx"],
       "dependencies": ["class-variance-authority"],
-      "usage": ["import { Button } from '@/components/ui/Button'", "<Button variant=\"default\">Click me</Button>"]
+      "usage": [
+        "import { Button } from '@/components/ui/Button'",
+        "<Button variant=\"default\">Click me</Button>"
+      ]
     },
     {
       "id": "input",
@@ -14,7 +17,10 @@
       "description": "Primary input used across the app.",
       "files": ["Input.tsx"],
       "dependencies": [],
-      "usage": ["import { Input } from '@/components/ui/Input'", "<Input type=\"text\" placeholder=\"Enter your name\" />"]
+      "usage": [
+        "import { Input } from '@/components/ui/Input'",
+        "<Input type=\"text\" placeholder=\"Enter your name\" />"
+      ]
     },
     {
       "id": "alert",
@@ -22,7 +28,10 @@
       "description": "Primary alert used across the app.",
       "files": ["Alert.tsx"],
       "dependencies": ["lucide-react"],
-      "usage": ["import { Alert } from '@/components/ui/Alert'", "<Alert variant=\"destructive\">Something went wrong!</Alert>"]
+      "usage": [
+        "import { Alert } from '@/components/ui/Alert'",
+        "<Alert variant=\"destructive\">Something went wrong!</Alert>"
+      ]
     },
     {
       "id": "badge",
@@ -30,7 +39,10 @@
       "description": "Primary badge used across the app.",
       "files": ["Badge.tsx"],
       "dependencies": ["class-variance-authority"],
-      "usage": ["import { Badge } from '@/components/ui/Badge'", "<Badge variant=\"secondary\">New</Badge>"]
+      "usage": [
+        "import { Badge } from '@/components/ui/Badge'",
+        "<Badge variant=\"secondary\">New</Badge>"
+      ]
     },
     {
       "id": "accordion",
@@ -38,7 +50,10 @@
       "description": "Collapsible sections built with React, Tailwind, and Framer Motion.",
       "files": ["Accordion.tsx"],
       "dependencies": ["framer-motion", "lucide-react"],
-      "usage": ["import { Accordion } from '@/components/ui/Accordion'", "<Accordion items={[{title: 'Section 1', content: 'Content 1'}]} />"]
+      "usage": [
+        "import { Accordion } from '@/components/ui/Accordion'",
+        "<Accordion items={[{title: 'Section 1', content: 'Content 1'}]} />"
+      ]
     },
     {
       "id": "alertdialog",
@@ -46,7 +61,10 @@
       "description": "Alert dialog built with React, Tailwind, and Framer Motion.",
       "files": ["AlertDialog.tsx"],
       "dependencies": ["framer-motion"],
-      "usage": ["import { AlertDialog } from '@/components/ui/AlertDialog'", "<AlertDialog open={true} onOpenChange={() => {}}>Are you sure?</AlertDialog>"]
+      "usage": [
+        "import { AlertDialog } from '@/components/ui/AlertDialog'",
+        "<AlertDialog open={true} onOpenChange={() => {}}>Are you sure?</AlertDialog>"
+      ]
     },
     {
       "id": "hovercard",
@@ -54,7 +72,10 @@
       "description": "Hover card built with React, Tailwind, and Framer Motion.",
       "files": ["HoverCard.tsx"],
       "dependencies": ["framer-motion"],
-      "usage": ["import { HoverCard } from '@/components/ui/HoverCard'", "<HoverCard trigger={<Button>Hover me</Button>}>Extra info here</HoverCard>"]
+      "usage": [
+        "import { HoverCard } from '@/components/ui/HoverCard'",
+        "<HoverCard trigger={<Button>Hover me</Button>}>Extra info here</HoverCard>"
+      ]
     },
     {
       "id": "textarea",
@@ -62,7 +83,10 @@
       "description": "Text area built with React, Tailwind.",
       "files": ["TextArea.tsx"],
       "dependencies": [],
-      "usage": ["import { TextArea } from '@/components/ui/TextArea'", "<TextArea placeholder=\"Write something...\" />"]
+      "usage": [
+        "import { TextArea } from '@/components/ui/TextArea'",
+        "<TextArea placeholder=\"Write something...\" />"
+      ]
     },
     {
       "id": "aspectratio",
@@ -70,7 +94,10 @@
       "description": "Aspect ratio built with React, Tailwind.",
       "files": ["AspectRatio.tsx"],
       "dependencies": [],
-      "usage": ["import { AspectRatio } from '@/components/ui/AspectRatio'", "<AspectRatio ratio={16/9}><img src=\"/image.jpg\" alt=\"demo\" /></AspectRatio>"]
+      "usage": [
+        "import { AspectRatio } from '@/components/ui/AspectRatio'",
+        "<AspectRatio ratio={16/9}><img src=\"/image.jpg\" alt=\"demo\" /></AspectRatio>"
+      ]
     },
     {
       "id": "select",
@@ -78,7 +105,10 @@
       "description": "Select component built with React, Tailwind.",
       "files": ["Select.tsx"],
       "dependencies": ["class-variance-authority"],
-      "usage": ["import { Select } from '@/components/ui/Select'", "<Select options={[{value:'1', label:'One'}]} value='1' onChange={()=>{}} />"]
+      "usage": [
+        "import { Select } from '@/components/ui/Select'",
+        "<Select options={[{value:'1', label:'One'}]} value='1' onChange={()=>{}} />"
+      ]
     },
     {
       "id": "radiogroup",
@@ -86,7 +116,10 @@
       "description": "Radio group built with React, Tailwind.",
       "files": ["RadioGroup.tsx"],
       "dependencies": ["class-variance-authority"],
-      "usage": ["import { RadioGroup } from '@/components/ui/RadioGroup'", "<RadioGroup options={[{value:'a', label:'A'}]} value='a' onChange={()=>{}} />"]
+      "usage": [
+        "import { RadioGroup } from '@/components/ui/RadioGroup'",
+        "<RadioGroup options={[{value:'a', label:'A'}]} value='a' onChange={()=>{}} />"
+      ]
     },
     {
       "id": "skeleton",
@@ -94,7 +127,10 @@
       "description": "Skeleton component built with React, Tailwind.",
       "files": ["Skeleton.tsx"],
       "dependencies": [],
-      "usage": ["import { Skeleton } from '@/components/ui/Skeleton'", "<Skeleton className=\"w-32 h-8\" />"]
+      "usage": [
+        "import { Skeleton } from '@/components/ui/Skeleton'",
+        "<Skeleton className=\"w-32 h-8\" />"
+      ]
     },
     {
       "id": "checkbox",
@@ -102,7 +138,10 @@
       "description": "A control that allows the user to toggle between checked and not checked.",
       "files": ["Checkbox.tsx"],
       "dependencies": ["class-variance-authority"],
-      "usage": ["import { Checkbox } from '@/components/ui/Checkbox'", "<Checkbox label=\"Accept terms\" checked={true} />"]
+      "usage": [
+        "import { Checkbox } from '@/components/ui/Checkbox'",
+        "<Checkbox label=\"Accept terms\" checked={true} />"
+      ]
     },
     {
       "id": "tooltip",
@@ -110,7 +149,10 @@
       "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
       "files": ["Tooltip.tsx"],
       "dependencies": ["framer-motion"],
-      "usage": ["import { Tooltip } from '@/components/ui/Tooltip'", "<Tooltip content=\"More info\"><Button>Hover</Button></Tooltip>"]
+      "usage": [
+        "import { Tooltip } from '@/components/ui/Tooltip'",
+        "<Tooltip content=\"More info\"><Button>Hover</Button></Tooltip>"
+      ]
     },
     {
       "id": "toast",
@@ -118,7 +160,10 @@
       "description": "An opinionated toast component for React.",
       "files": ["Toast.tsx"],
       "dependencies": ["framer-motion"],
-      "usage": ["import { toast } from '@/components/ui/Toast'", "toast.success('Profile updated successfully!')"]
+      "usage": [
+        "import { toast } from '@/components/ui/Toast'",
+        "toast.success('Profile updated successfully!')"
+      ]
     },
     {
       "id": "separator",
@@ -126,15 +171,21 @@
       "description": "Visually or semantically separates content.",
       "files": ["Separator.tsx"],
       "dependencies": [],
-      "usage": ["import { Separator } from '@/components/ui/Separator'", "<Separator className=\"my-4\" />"]
+      "usage": [
+        "import { Separator } from '@/components/ui/Separator'",
+        "<Separator className=\"my-4\" />"
+      ]
     },
     {
       "id": "slider",
       "title": "Slider",
-      "description": "An input where the user selects a value from within a given range",
+      "description": "An input where the user selects a value from within a given range.",
       "files": ["Slider.tsx"],
       "dependencies": ["class-variance-authority"],
-      "usage": ["import { Slider } from '@/components/ui/Slider'", "<Slider min={0} max={100} value={50} />"]
+      "usage": [
+        "import { Slider } from '@/components/ui/Slider'",
+        "<Slider min={0} max={100} value={50} />"
+      ]
     },
     {
       "id": "sheet",
@@ -142,7 +193,10 @@
       "description": "Sheet component for React.",
       "files": ["Sheet.tsx"],
       "dependencies": ["framer-motion"],
-      "usage": ["import { Sheet } from '@/components/ui/Sheet'", "<Sheet open={true} onOpenChange={() => {}}>Some content</Sheet>"]
+      "usage": [
+        "import { Sheet } from '@/components/ui/Sheet'",
+        "<Sheet open={true} onOpenChange={() => {}}>Some content</Sheet>"
+      ]
     },
     {
       "id": "drawer",
@@ -150,26 +204,31 @@
       "description": "A drawer component for React.",
       "files": ["Drawer.tsx"],
       "dependencies": ["framer-motion"],
-      "usage": ["import { Drawer } from '@/components/ui/Drawer'", "<Drawer open={true} onOpenChange={() => {}}>Drawer Content</Drawer>"]
+      "usage": [
+        "import { Drawer } from '@/components/ui/Drawer'",
+        "<Drawer open={true} onOpenChange={() => {}}>Drawer Content</Drawer>"
+      ]
     },
     {
       "id": "card",
       "title": "Card",
-      "description": "Displays a card with header, content, and footer",
+      "description": "Displays a card with header, content, and footer.",
       "files": ["Card.tsx"],
       "dependencies": ["class-variance-authority"],
       "usage": [
         "import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/Card'",
-        "<Card>\n  <CardHeader>\n    <CardTitle>Card Title</CardTitle>\n    <CardDescription>Card Description</CardDescription>\n    <CardAction>Card Action</CardAction>\n  </CardHeader>\n  <CardContent>\n    <p>Card Content</p>\n  </CardContent>\n  <CardFooter>\n    <p>Card Footer</p>\n  </CardFooter>\n</Card>"
+        "<Card>\\n  <CardHeader>\\n    <CardTitle>Card Title</CardTitle>\\n    <CardDescription>Card Description</CardDescription>\\n    <CardAction>Card Action</CardAction>\\n  </CardHeader>\\n  <CardContent>\\n    <p>Card Content</p>\\n  </CardContent>\\n  <CardFooter>\\n    <p>Card Footer</p>\\n  </CardFooter>\\n</Card>"
       ]
     },
     {
       "id": "command",
-      "title": "command",
-      "description": "command component for react",
+      "title": "Command",
+      "description": "Command component for React.",
       "files": ["Command.tsx"],
       "dependencies": ["framer-motion"],
-      "usage": ["import { Command } from '@/components/ui/Command'"]
+      "usage": [
+        "import { Command } from '@/components/ui/Command'"
+      ]
     },
     {
       "id": "label",
@@ -177,7 +236,10 @@
       "description": "Renders an accessible label associated with controls.",
       "files": ["Label.tsx"],
       "dependencies": [],
-      "usage": ["import { Label } from '@/components/ui/Label'", "<Label htmlFor='email'>Your email address</Label>"]
+      "usage": [
+        "import { Label } from '@/components/ui/Label'",
+        "<Label htmlFor='email'>Your email address</Label>"
+      ]
     },
     {
       "id": "dialog",
@@ -186,8 +248,8 @@
       "files": ["Dialog.tsx"],
       "dependencies": ["framer-motion", "lucide-react"],
       "usage": [
-        "import { Button } from '@/components/ui/button';\nimport { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';",
-        "export function DialogDemo() {\n  return (\n    <Dialog>\n      <form>\n        <DialogTrigger asChild>\n          <Button variant='outline'>Open Dialog</Button>\n        </DialogTrigger>\n        <DialogContent className='sm:max-w-[425px]'>\n          <DialogHeader>\n            <DialogTitle>Edit profile</DialogTitle>\n            <DialogDescription>\n              Make changes to your profile here. Click save when you&apos;re done.\n            </DialogDescription>\n          </DialogHeader>\n          <div className='grid gap-4 py-4'>\n            <div className='grid gap-2'>\n              <Label htmlFor='name'>Name</Label>\n              <Input id='name' name='name' defaultValue='Pedro Duarte' />\n            </div>\n            <div className='grid gap-2'>\n              <Label htmlFor='username'>Username</Label>\n              <Input id='username' name='username' defaultValue='@peduarte' />\n            </div>\n          </div>\n          <DialogFooter>\n            <DialogClose asChild>\n              <Button variant='outline'>Cancel</Button>\n            </DialogClose>\n            <Button type='submit'>Save changes</Button>\n          </DialogFooter>\n        </DialogContent>\n      </form>\n    </Dialog>\n  )\n}"
+        "import { Button } from '@/components/ui/button';\\nimport { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';\\nimport { Input } from '@/components/ui/input';\\nimport { Label } from '@/components/ui/label';",
+        "export function DialogDemo() {\\n  return (\\n    <Dialog>\\n      <form>\\n        <DialogTrigger asChild>\\n          <Button variant='outline'>Open Dialog</Button>\\n        </DialogTrigger>\\n        <DialogContent className='sm:max-w-[425px]'>\\n          <DialogHeader>\\n            <DialogTitle>Edit profile</DialogTitle>\\n            <DialogDescription>\\n              Make changes to your profile here. Click save when you&apos;re done.\\n            </DialogDescription>\\n          </DialogHeader>\\n          <div className='grid gap-4 py-4'>\\n            <div className='grid gap-2'>\\n              <Label htmlFor='name'>Name</Label>\\n              <Input id='name' name='name' defaultValue='Pedro Duarte' />\\n            </div>\\n            <div className='grid gap-2'>\\n              <Label htmlFor='username'>Username</Label>\\n              <Input id='username' name='username' defaultValue='@peduarte' />\\n            </div>\\n          </div>\\n          <DialogFooter>\\n            <DialogClose asChild>\\n              <Button variant='outline'>Cancel</Button>\\n            </DialogClose>\\n            <Button type='submit'>Save changes</Button>\\n          </DialogFooter>\\n        </DialogContent>\\n      </form>\\n    </Dialog>\\n  )\\n}"
       ]
     },
     {
@@ -197,9 +259,20 @@
       "files": ["Breadcrumb.tsx"],
       "dependencies": ["lucide-react"],
       "usage": [
-  "import { Breadcrumb } from '@/components/ui/Breadcrumb'",
-  "<Breadcrumb>\n  <a href='/'>Home</a> / <a href='/dashboard'>Dashboard</a> / <span>Settings</span>\n</Breadcrumb>"
-]
+        "import { Breadcrumb } from '@/components/ui/Breadcrumb'",
+        "<Breadcrumb>\\n  <a href='/'>Home</a> / <a href='/dashboard'>Dashboard</a> / <span>Settings</span>\\n</Breadcrumb>"
+      ]
+    },
+    {
+      "id": "empty",
+      "title": "Empty",
+      "description": "Use the Empty component to display an empty state.",
+      "files": ["Empty.tsx"],
+      "dependencies": ["class-variance-authority"],
+      "usage": [
+        "import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/ui/empty'",
+        "<Empty>\\n  <EmptyHeader>\\n    <EmptyMedia variant='icon'>\\n      <Icon />\\n    </EmptyMedia>\\n  </EmptyHeader>\\n  <EmptyTitle>No data</EmptyTitle>\\n  <EmptyDescription>No data found</EmptyDescription>\\n  <EmptyContent>\\n    <Button>Add data</Button>\\n  </EmptyContent>\\n</Empty>"
+      ]
     }
   ]
 }
