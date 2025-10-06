@@ -286,7 +286,7 @@
   ]
 },
 {
-  "id": "item",
+  "id": "Item",
   "title": "Item",
   "description": "A flexible, composable item component system for list-like UI layouts.",
   "files": ["Item.tsx"],
