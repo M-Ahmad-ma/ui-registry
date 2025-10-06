@@ -284,6 +284,17 @@
     "import { Spinner } from '@/components/ui/spinner'",
     "<div><Spinner /></div>"
   ]
+},
+{
+  "id": "item",
+  "title": "Item",
+  "description": "A flexible, composable item component system for list-like UI layouts.",
+  "files": ["Item.tsx"],
+  "dependencies": ["class-variance-authority", "lucide-react"],
+  "usage": [
+    "import { Item, ItemGroup, ItemHeader, ItemMedia, ItemContent, ItemTitle, ItemDescription, ItemActions, ItemSeparator, ItemFooter } from '@/components/ui/item'",
+    "<ItemGroup>\\n  <Item>\\n    <ItemHeader>\\n      <ItemMedia variant='icon'>\\n        <Star />\\n      </ItemMedia>\\n      <ItemContent>\\n        <ItemTitle>Premium Feature</ItemTitle>\\n        <ItemDescription>Unlock access to exclusive tools</ItemDescription>\\n      </ItemContent>\\n      <ItemActions>\\n        <Button size='sm'>Upgrade</Button>\\n      </ItemActions>\\n    </ItemHeader>\\n  </Item>\\n</ItemGroup>"
+  ]
 }
   ]
 }
