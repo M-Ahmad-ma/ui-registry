@@ -35,7 +35,6 @@ export default function CommandExample() {
     },
   ]
 
-  // filter items based on query
   const filteredCommands = commands.map((group) => ({
     ...group,
     items: group.items.filter((item) =>

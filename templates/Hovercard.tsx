@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils/cn";
 import { createContext, useContext } from "react";
 
-// ---------------- Context ----------------
 interface HoverCardCtx {
   open: boolean;
   setOpen: (v: boolean) => void;
@@ -22,7 +21,6 @@ function useHoverCard() {
   return ctx;
 }
 
-// ---------------- Root ----------------
 interface HoverCardProps {
   children: React.ReactNode;
 }
@@ -38,7 +36,6 @@ export function HoverCard({ children }: HoverCardProps) {
   );
 }
 
-// ---------------- Trigger ----------------
 interface TriggerProps {
   children: React.ReactNode;
   openDelay?: number;
@@ -71,7 +68,6 @@ function Trigger({ children, openDelay = 150, closeDelay = 150 }: TriggerProps) 
   );
 }
 
-// ---------------- Content ----------------
 interface ContentProps {
   children: React.ReactNode;
   className?: string;
@@ -141,7 +137,6 @@ function Content({
   );
 }
 
-// ---------------- Export ----------------
 HoverCard.Trigger = Trigger;
 HoverCard.Content = Content;
 
