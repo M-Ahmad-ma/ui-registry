@@ -409,6 +409,21 @@
         "import { Tabs, TabsList, TabsTrigger, TabsContent } from \"@/components/ui/tabs\";",
         "<Tabs defaultValue=\"account\">\n  <TabsList>\n    <TabsTrigger value=\"account\">Account</TabsTrigger>\n    <TabsTrigger value=\"password\">Password</TabsTrigger>\n  </TabsList>\n\n  <TabsContent value=\"account\">\n    Account settings live here\n  </TabsContent>\n\n  <TabsContent value=\"password\">\n    Change password here\n  </TabsContent>\n</Tabs>"
       ]
+    },
+    {
+      "id": "dropdown",
+      "title": "Dropdown",
+      "description": "A flexible, composable Tab component system for list-like UI layouts.",
+      "files": [
+        "Dropdown.tsx"
+      ],
+      "dependencies": [
+        ""
+      ],
+      "usage": [
+        "import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownCheckboxItem } from '@/components/ui/dropdown'",
+        "<DropdownMenu><DropdownMenuTrigger asChild><Button variant=\"outline\">Settings</Button></DropdownMenuTrigger><DropdownMenuContent align=\"start\" className=\"w-48\"><DropdownCheckboxItem checked={enabled} onChange={setEnabled}>Enable feature</DropdownCheckboxItem></DropdownMenuContent></DropdownMenu>"
+      ]
     }
   ]
 }
