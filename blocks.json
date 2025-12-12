@@ -4,8 +4,12 @@
       "id": "button",
       "title": "Button",
       "description": "Primary button used across the app.",
-      "files": ["Button.tsx"],
-      "dependencies": ["class-variance-authority"],
+      "files": [
+        "Button.tsx"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "usage": [
         "import { Button } from '@/components/ui/Button'",
         "<Button variant=\"default\">Click me</Button>"
@@ -15,7 +19,9 @@
       "id": "input",
       "title": "Input",
       "description": "Primary input used across the app.",
-      "files": ["Input.tsx"],
+      "files": [
+        "Input.tsx"
+      ],
       "dependencies": [],
       "usage": [
         "import { Input } from '@/components/ui/Input'",
@@ -26,8 +32,12 @@
       "id": "alert",
       "title": "Alert",
       "description": "Primary alert used across the app.",
-      "files": ["Alert.tsx"],
-      "dependencies": ["lucide-react"],
+      "files": [
+        "Alert.tsx"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
       "usage": [
         "import { Alert } from '@/components/ui/Alert'",
         "<Alert variant=\"destructive\">Something went wrong!</Alert>"
@@ -37,8 +47,12 @@
       "id": "badge",
       "title": "Badge",
       "description": "Primary badge used across the app.",
-      "files": ["Badge.tsx"],
-      "dependencies": ["class-variance-authority"],
+      "files": [
+        "Badge.tsx"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "usage": [
         "import { Badge } from '@/components/ui/Badge'",
         "<Badge variant=\"secondary\">New</Badge>"
@@ -48,8 +62,13 @@
       "id": "accordion",
       "title": "Accordion",
       "description": "Collapsible sections built with React, Tailwind, and Framer Motion.",
-      "files": ["Accordion.tsx"],
-      "dependencies": ["framer-motion", "lucide-react"],
+      "files": [
+        "Accordion.tsx"
+      ],
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
       "usage": [
         "import { Accordion } from '@/components/ui/Accordion'",
         "<Accordion items={[{title: 'Section 1', content: 'Content 1'}]} />"
@@ -59,8 +78,12 @@
       "id": "alertdialog",
       "title": "AlertDialog",
       "description": "Alert dialog built with React, Tailwind, and Framer Motion.",
-      "files": ["AlertDialog.tsx"],
-      "dependencies": ["framer-motion"],
+      "files": [
+        "AlertDialog.tsx"
+      ],
+      "dependencies": [
+        "framer-motion"
+      ],
       "usage": [
         "import { AlertDialog } from '@/components/ui/AlertDialog'",
         "<AlertDialog open={true} onOpenChange={() => {}}>Are you sure?</AlertDialog>"
@@ -70,8 +93,12 @@
       "id": "hovercard",
       "title": "HoverCard",
       "description": "Hover card built with React, Tailwind, and Framer Motion.",
-      "files": ["HoverCard.tsx"],
-      "dependencies": ["framer-motion"],
+      "files": [
+        "HoverCard.tsx"
+      ],
+      "dependencies": [
+        "framer-motion"
+      ],
       "usage": [
         "import { HoverCard } from '@/components/ui/HoverCard'",
         "<HoverCard trigger={<Button>Hover me</Button>}>Extra info here</HoverCard>"
@@ -81,7 +108,9 @@
       "id": "textarea",
       "title": "TextArea",
       "description": "Text area built with React, Tailwind.",
-      "files": ["TextArea.tsx"],
+      "files": [
+        "TextArea.tsx"
+      ],
       "dependencies": [],
       "usage": [
         "import { TextArea } from '@/components/ui/TextArea'",
@@ -92,7 +121,9 @@
       "id": "aspectratio",
       "title": "AspectRatio",
       "description": "Aspect ratio built with React, Tailwind.",
-      "files": ["AspectRatio.tsx"],
+      "files": [
+        "AspectRatio.tsx"
+      ],
       "dependencies": [],
       "usage": [
         "import { AspectRatio } from '@/components/ui/AspectRatio'",
@@ -103,8 +134,12 @@
       "id": "select",
       "title": "Select",
       "description": "Select component built with React, Tailwind.",
-      "files": ["Select.tsx"],
-      "dependencies": ["class-variance-authority"],
+      "files": [
+        "Select.tsx"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "usage": [
         "import { Select } from '@/components/ui/Select'",
         "<Select options={[{value:'1', label:'One'}]} value='1' onChange={()=>{}} />"
@@ -114,8 +149,12 @@
       "id": "radiogroup",
       "title": "RadioGroup",
       "description": "Radio group built with React, Tailwind.",
-      "files": ["RadioGroup.tsx"],
-      "dependencies": ["class-variance-authority"],
+      "files": [
+        "RadioGroup.tsx"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "usage": [
         "import { RadioGroup } from '@/components/ui/RadioGroup'",
         "<RadioGroup options={[{value:'a', label:'A'}]} value='a' onChange={()=>{}} />"
@@ -125,7 +164,9 @@
       "id": "skeleton",
       "title": "Skeleton",
       "description": "Skeleton component built with React, Tailwind.",
-      "files": ["Skeleton.tsx"],
+      "files": [
+        "Skeleton.tsx"
+      ],
       "dependencies": [],
       "usage": [
         "import { Skeleton } from '@/components/ui/Skeleton'",
@@ -136,8 +177,12 @@
       "id": "checkbox",
       "title": "Checkbox",
       "description": "A control that allows the user to toggle between checked and not checked.",
-      "files": ["Checkbox.tsx"],
-      "dependencies": ["class-variance-authority"],
+      "files": [
+        "Checkbox.tsx"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "usage": [
         "import { Checkbox } from '@/components/ui/Checkbox'",
         "<Checkbox label=\"Accept terms\" checked={true} />"
@@ -147,8 +192,12 @@
       "id": "tooltip",
       "title": "Tooltip",
       "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-      "files": ["Tooltip.tsx"],
-      "dependencies": ["framer-motion"],
+      "files": [
+        "Tooltip.tsx"
+      ],
+      "dependencies": [
+        "framer-motion"
+      ],
       "usage": [
         "import { Tooltip } from '@/components/ui/Tooltip'",
         "<Tooltip content=\"More info\"><Button>Hover</Button></Tooltip>"
@@ -158,8 +207,12 @@
       "id": "toast",
       "title": "Toast",
       "description": "An opinionated toast component for React.",
-      "files": ["Toast.tsx"],
-      "dependencies": ["framer-motion"],
+      "files": [
+        "Toast.tsx"
+      ],
+      "dependencies": [
+        "framer-motion"
+      ],
       "usage": [
         "import { toast } from '@/components/ui/Toast'",
         "toast.success('Profile updated successfully!')"
@@ -169,7 +222,9 @@
       "id": "separator",
       "title": "Separator",
       "description": "Visually or semantically separates content.",
-      "files": ["Separator.tsx"],
+      "files": [
+        "Separator.tsx"
+      ],
       "dependencies": [],
       "usage": [
         "import { Separator } from '@/components/ui/Separator'",
@@ -180,8 +235,12 @@
       "id": "slider",
       "title": "Slider",
       "description": "An input where the user selects a value from within a given range.",
-      "files": ["Slider.tsx"],
-      "dependencies": ["class-variance-authority"],
+      "files": [
+        "Slider.tsx"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "usage": [
         "import { Slider } from '@/components/ui/Slider'",
         "<Slider min={0} max={100} value={50} />"
@@ -191,8 +250,12 @@
       "id": "sheet",
       "title": "Sheet",
       "description": "Sheet component for React.",
-      "files": ["Sheet.tsx"],
-      "dependencies": ["framer-motion"],
+      "files": [
+        "Sheet.tsx"
+      ],
+      "dependencies": [
+        "framer-motion"
+      ],
       "usage": [
         "import { Sheet } from '@/components/ui/Sheet'",
         "<Sheet open={true} onOpenChange={() => {}}>Some content</Sheet>"
@@ -202,8 +265,12 @@
       "id": "drawer",
       "title": "Drawer",
       "description": "A drawer component for React.",
-      "files": ["Drawer.tsx"],
-      "dependencies": ["framer-motion"],
+      "files": [
+        "Drawer.tsx"
+      ],
+      "dependencies": [
+        "framer-motion"
+      ],
       "usage": [
         "import { Drawer } from '@/components/ui/Drawer'",
         "<Drawer open={true} onOpenChange={() => {}}>Drawer Content</Drawer>"
@@ -213,8 +280,12 @@
       "id": "card",
       "title": "Card",
       "description": "Displays a card with header, content, and footer.",
-      "files": ["Card.tsx"],
-      "dependencies": ["class-variance-authority"],
+      "files": [
+        "Card.tsx"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "usage": [
         "import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/Card'",
         "<Card>\\n  <CardHeader>\\n    <CardTitle>Card Title</CardTitle>\\n    <CardDescription>Card Description</CardDescription>\\n    <CardAction>Card Action</CardAction>\\n  </CardHeader>\\n  <CardContent>\\n    <p>Card Content</p>\\n  </CardContent>\\n  <CardFooter>\\n    <p>Card Footer</p>\\n  </CardFooter>\\n</Card>"
@@ -224,8 +295,12 @@
       "id": "command",
       "title": "Command",
       "description": "Command component for React.",
-      "files": ["Command.tsx"],
-      "dependencies": ["framer-motion"],
+      "files": [
+        "Command.tsx"
+      ],
+      "dependencies": [
+        "framer-motion"
+      ],
       "usage": [
         "import { Command } from '@/components/ui/Command'"
       ]
@@ -234,7 +309,9 @@
       "id": "label",
       "title": "Label",
       "description": "Renders an accessible label associated with controls.",
-      "files": ["Label.tsx"],
+      "files": [
+        "Label.tsx"
+      ],
       "dependencies": [],
       "usage": [
         "import { Label } from '@/components/ui/Label'",
@@ -245,8 +322,13 @@
       "id": "dialog",
       "title": "Dialog",
       "description": "A customizable dialog component built with React and Tailwind, without Radix.",
-      "files": ["Dialog.tsx"],
-      "dependencies": ["framer-motion", "lucide-react"],
+      "files": [
+        "Dialog.tsx"
+      ],
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
       "usage": [
         "import { Button } from '@/components/ui/button';\\nimport { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';\\nimport { Input } from '@/components/ui/input';\\nimport { Label } from '@/components/ui/label';",
         "export function DialogDemo() {\\n  return (\\n    <Dialog>\\n      <form>\\n        <DialogTrigger asChild>\\n          <Button variant='outline'>Open Dialog</Button>\\n        </DialogTrigger>\\n        <DialogContent className='sm:max-w-[425px]'>\\n          <DialogHeader>\\n            <DialogTitle>Edit profile</DialogTitle>\\n            <DialogDescription>\\n              Make changes to your profile here. Click save when you&apos;re done.\\n            </DialogDescription>\\n          </DialogHeader>\\n          <div className='grid gap-4 py-4'>\\n            <div className='grid gap-2'>\\n              <Label htmlFor='name'>Name</Label>\\n              <Input id='name' name='name' defaultValue='Pedro Duarte' />\\n            </div>\\n            <div className='grid gap-2'>\\n              <Label htmlFor='username'>Username</Label>\\n              <Input id='username' name='username' defaultValue='@peduarte' />\\n            </div>\\n          </div>\\n          <DialogFooter>\\n            <DialogClose asChild>\\n              <Button variant='outline'>Cancel</Button>\\n            </DialogClose>\\n            <Button type='submit'>Save changes</Button>\\n          </DialogFooter>\\n        </DialogContent>\\n      </form>\\n    </Dialog>\\n  )\\n}"
@@ -256,8 +338,12 @@
       "id": "breadcrumb",
       "title": "Breadcrumb",
       "description": "Displays the path to the current resource using a hierarchy of links.",
-      "files": ["Breadcrumb.tsx"],
-      "dependencies": ["lucide-react"],
+      "files": [
+        "Breadcrumb.tsx"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
       "usage": [
         "import { Breadcrumb } from '@/components/ui/Breadcrumb'",
         "<Breadcrumb>\\n  <a href='/'>Home</a> / <a href='/dashboard'>Dashboard</a> / <span>Settings</span>\\n</Breadcrumb>"
@@ -267,35 +353,62 @@
       "id": "empty",
       "title": "Empty",
       "description": "Use the Empty component to display an empty state.",
-      "files": ["Empty.tsx"],
-      "dependencies": ["class-variance-authority"],
+      "files": [
+        "Empty.tsx"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "usage": [
         "import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/ui/empty'",
         "<Empty>\\n  <EmptyHeader>\\n    <EmptyMedia variant='icon'>\\n      <Icon />\\n    </EmptyMedia>\\n  </EmptyHeader>\\n  <EmptyTitle>No data</EmptyTitle>\\n  <EmptyDescription>No data found</EmptyDescription>\\n  <EmptyContent>\\n    <Button>Add data</Button>\\n  </EmptyContent>\\n</Empty>"
       ]
     },
-{
-  "id": "spinner",
-  "title": "Spinner",
-  "description": "An indicator that can be used to show a loading state.",
-  "files": ["Spinner.tsx"],
-  "dependencies": ["lucide-react"],
-  "usage": [
-    "import { Spinner } from '@/components/ui/spinner'",
-    "<div><Spinner /></div>"
-  ]
-},
-{
-  "id": "item",
-  "title": "Item",
-  "description": "A flexible, composable item component system for list-like UI layouts.",
-  "files": ["Item.tsx"],
-  "dependencies": ["class-variance-authority", "lucide-react"],
-  "usage": [
-    "import { Item, ItemGroup, ItemHeader, ItemMedia, ItemContent, ItemTitle, ItemDescription, ItemActions, ItemSeparator, ItemFooter } from '@/components/ui/item'",
-    "<ItemGroup>\\n  <Item>\\n    <ItemHeader>\\n      <ItemMedia variant='icon'>\\n        <Star />\\n      </ItemMedia>\\n      <ItemContent>\\n        <ItemTitle>Premium Feature</ItemTitle>\\n        <ItemDescription>Unlock access to exclusive tools</ItemDescription>\\n      </ItemContent>\\n      <ItemActions>\\n        <Button size='sm'>Upgrade</Button>\\n      </ItemActions>\\n    </ItemHeader>\\n  </Item>\\n</ItemGroup>"
+    {
+      "id": "spinner",
+      "title": "Spinner",
+      "description": "An indicator that can be used to show a loading state.",
+      "files": [
+        "Spinner.tsx"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "usage": [
+        "import { Spinner } from '@/components/ui/spinner'",
+        "<div><Spinner /></div>"
+      ]
+    },
+    {
+      "id": "item",
+      "title": "Item",
+      "description": "A flexible, composable item component system for list-like UI layouts.",
+      "files": [
+        "Item.tsx"
+      ],
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "usage": [
+        "import { Item, ItemGroup, ItemHeader, ItemMedia, ItemContent, ItemTitle, ItemDescription, ItemActions, ItemSeparator, ItemFooter } from '@/components/ui/item'",
+        "<ItemGroup>\\n  <Item>\\n    <ItemHeader>\\n      <ItemMedia variant='icon'>\\n        <Star />\\n      </ItemMedia>\\n      <ItemContent>\\n        <ItemTitle>Premium Feature</ItemTitle>\\n        <ItemDescription>Unlock access to exclusive tools</ItemDescription>\\n      </ItemContent>\\n      <ItemActions>\\n        <Button size='sm'>Upgrade</Button>\\n      </ItemActions>\\n    </ItemHeader>\\n  </Item>\\n</ItemGroup>"
+      ]
+    },
+    {
+      "id": "tab",
+      "title": "Tab",
+      "description": "A flexible, composable Tab component system for list-like UI layouts.",
+      "files": [
+        "Tab.tsx"
+      ],
+      "dependencies": [
+        ""
+      ],
+      "usage": [
+        "import { Tabs, TabsList, TabsTrigger, TabsContent } from \"@/components/ui/tabs\";",
+        "<Tabs defaultValue=\"account\">\n  <TabsList>\n    <TabsTrigger value=\"account\">Account</TabsTrigger>\n    <TabsTrigger value=\"password\">Password</TabsTrigger>\n  </TabsList>\n\n  <TabsContent value=\"account\">\n    Account settings live here\n  </TabsContent>\n\n  <TabsContent value=\"password\">\n    Change password here\n  </TabsContent>\n</Tabs>"
+      ]
+    }
   ]
 }
-  ]
-}
-
