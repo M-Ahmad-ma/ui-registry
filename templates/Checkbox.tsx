@@ -1,3 +1,4 @@
+"use client";
 
 import React, { forwardRef, useEffect, useRef } from "react";
 import { Check, Minus } from "lucide-react";
@@ -6,9 +7,9 @@ type Size = "sm" | "md" | "lg";
 type Variant = "default" | "ghost" | "accent";
 
 export interface CustomCheckboxProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
   label?: React.ReactNode;
-  size?: Size;
+  checkSize?: Size;
   variant?: Variant;
   indeterminate?: boolean;
   containerClassName?: string;
@@ -39,39 +40,41 @@ const Checkbox = forwardRef<HTMLInputElement, CustomCheckboxProps>(
       containerClassName = "",
       boxClassName = "",
       iconClassName = "",
-      size = "md",
+      checkSize = "md",
       variant = "default",
       indeterminate = false,
       disabled = false,
       children,
       ...rest
     },
-    ref
+    ref,
   ) => {
-    const internalRef = useRef<HTMLInputElement | null>(null);
+    const internalRef = useRef<HTMLInputElement>(null);
 
+    // ✅ Sync the forwarded ref
     useEffect(() => {
       if (!ref) return;
       if (typeof ref === "function") {
         ref(internalRef.current);
-      } else if (typeof ref === "object" && ref !== null) {
+      } else if (ref && "current" in ref) {
         (ref as React.MutableRefObject<HTMLInputElement | null>).current =
           internalRef.current;
       }
     }, [ref]);
 
+    // ✅ Handle indeterminate checkbox state
     useEffect(() => {
       if (internalRef.current) {
-        internalRef.current.indeterminate = !!indeterminate;
+        internalRef.current.indeterminate = indeterminate;
       }
     }, [indeterminate]);
 
-    const sizeCls = sizeMap[size];
+    const sizeCls = sizeMap[checkSize];
     const variantCls = variantMap[variant];
 
     return (
       <label
-        className={`inline-flex items-center gap-3 select-none ${
+        className={`flex items-center gap-2 select-none ${
           disabled ? "opacity-60 cursor-not-allowed" : "cursor-pointer"
         } ${containerClassName} ${className}`}
       >
@@ -79,7 +82,7 @@ const Checkbox = forwardRef<HTMLInputElement, CustomCheckboxProps>(
           className={`relative inline-flex items-center justify-center rounded-md border ${sizeCls} ${
             variant === "accent" ? "text-white" : "text-gray-900"
           } ${variantCls} transition-colors duration-150 ${boxClassName}`}
-          aria-hidden
+          aria-hidden="true"
         >
           <input
             ref={internalRef}
@@ -91,19 +94,21 @@ const Checkbox = forwardRef<HTMLInputElement, CustomCheckboxProps>(
 
           {indeterminate ? (
             <Minus className={`w-3/4 h-3/4 stroke-[3] ${iconClassName}`} />
-          ) : rest.checked ? (
-            <Check className={`w-3/4 h-3/4 stroke-[3] ${iconClassName}`} />
-          ) : null}
+          ) : (
+            <Check
+              className={`w-3/4 h-3/4 stroke-[3] hidden peer-checked:block ${iconClassName}`}
+            />
+          )}
         </span>
 
         {label ? (
           <span className="text-sm leading-none">{label}</span>
         ) : (
-          children ?? null
+          (children ?? null)
         )}
       </label>
     );
-  }
+  },
 );
 
 Checkbox.displayName = "Checkbox";

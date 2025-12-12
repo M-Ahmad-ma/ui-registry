@@ -1,13 +1,24 @@
-
 "use client";
 
-import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CheckCircle, AlertTriangle, Info, X } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/cn";
 
 export type ToastVariant = "default" | "success" | "error" | "info";
-export type ToastPosition = "top-left" | "top-right" | "bottom-left" | "bottom-right";
+export type ToastPosition =
+  | "top-left"
+  | "top-right"
+  | "bottom-left"
+  | "bottom-right";
 
 export type ToastOptions = {
   id?: string | number;
@@ -18,14 +29,28 @@ export type ToastOptions = {
   action?: {
     label: string;
     onClick: (id: string | number) => void;
-  };
+  } | null;
   className?: string;
 };
 
-type ToastItem = Required<Pick<ToastOptions, "id" | "title" | "description" | "duration" | "variant" | "action" | "className">>;
+type ToastItem = Required<
+  Pick<
+    ToastOptions,
+    | "id"
+    | "title"
+    | "description"
+    | "duration"
+    | "variant"
+    | "action"
+    | "className"
+  >
+>;
 
 type ToastContextValue = {
-  toast: (message: React.ReactNode | ToastOptions, opts?: ToastOptions) => string | number;
+  toast: (
+    message: React.ReactNode | ToastOptions,
+    opts?: ToastOptions,
+  ) => string | number;
   dismiss: (id: string | number) => void;
   clear: () => void;
 };
@@ -39,7 +64,6 @@ function genId(prefix = "toast") {
   return `${prefix}-${Date.now().toString(36)}-${idCounter}`;
 }
 
-
 export function ToastProvider({
   children,
   position = "top-right",
@@ -50,7 +74,9 @@ export function ToastProvider({
   containerClassName?: string;
 }) {
   const [toasts, setToasts] = useState<ToastItem[]>([]);
-  const timers = useRef<Map<string | number, ReturnType<typeof setTimeout>>>(new Map());
+  const timers = useRef<Map<string | number, ReturnType<typeof setTimeout>>>(
+    new Map(),
+  );
 
   const push = useCallback((payload: ToastOptions): string | number => {
     const id = payload.id ?? genId();
@@ -63,7 +89,7 @@ export function ToastProvider({
       action: payload.action ?? null,
       className: payload.className ?? "",
     };
-    setToasts((s) => [item, ...s]); 
+    setToasts((s) => [item, ...s]);
     if (item.duration > 0) {
       const t = setTimeout(() => {
         setToasts((s) => s.filter((x) => x.id !== id));
@@ -96,18 +122,34 @@ export function ToastProvider({
     };
   }, []);
 
-  const value = useMemo(() => ({ toast: (m: React.ReactNode | ToastOptions, o?: ToastOptions) => {
-    if (typeof m === "object" && ("title" in m || "description" in m)) {
-      return push(m as ToastOptions);
-    }
-    const opts = o ?? {};
-    return push({ ...opts, title: m as React.ReactNode });
-  }, dismiss: remove, clear }), [push, remove, clear]);
+  const value = useMemo(
+    () => ({
+      toast: (m: React.ReactNode | ToastOptions, o?: ToastOptions) => {
+        if (
+          m &&
+          typeof m === "object" &&
+          ("title" in m || "description" in m)
+        ) {
+          return push(m as ToastOptions);
+        }
+        const opts = o ?? {};
+        return push({ ...opts, title: m as React.ReactNode });
+      },
+      dismiss: remove,
+      clear,
+    }),
+    [push, remove, clear],
+  );
 
   return (
     <ToastContext.Provider value={value}>
       {children}
-      <Toaster toasts={toasts} onDismiss={remove} position={position} containerClassName={containerClassName} />
+      <Toaster
+        toasts={toasts}
+        onDismiss={remove}
+        position={position}
+        containerClassName={containerClassName}
+      />
     </ToastContext.Provider>
   );
 }
@@ -118,22 +160,29 @@ export function useToast() {
   return ctx;
 }
 
-
 const _globalRef: { current: ToastContextValue | null } = { current: null };
 
 export function bindToast(ctx: ToastContextValue | null) {
   _globalRef.current = ctx;
 }
-export function toast(message: React.ReactNode | ToastOptions, opts?: ToastOptions) {
+
+export function toast(
+  message: React.ReactNode | ToastOptions,
+  opts?: ToastOptions,
+) {
   if (!_globalRef.current) {
-    console.warn("toast() called before ToastProvider mounted. Wrap app with <ToastProvider/>.");
+    console.warn(
+      "toast() called before ToastProvider mounted. Wrap app with <ToastProviderBinder/>.",
+    );
     return null;
   }
   return _globalRef.current.toast(message, opts);
 }
+
 export function dismiss(id: string | number) {
   _globalRef.current?.dismiss(id);
 }
+
 export function clearToasts() {
   _globalRef.current?.clear();
 }
@@ -157,7 +206,13 @@ function Toaster({
   } as const;
 
   return (
-    <div className={cn("fixed z-50 pointer-events-none", posClasses[position], containerClassName)}>
+    <div
+      className={cn(
+        "fixed z-50 pointer-events-none",
+        posClasses[position],
+        containerClassName,
+      )}
+    >
       <div className="flex flex-col gap-3">
         <AnimatePresence initial={false}>
           {toasts.map((t) => (
@@ -178,10 +233,19 @@ function Toaster({
   );
 }
 
-function ToastCard({ toast, onDismiss }: { toast: ToastItem; onDismiss: () => void }) {
+function ToastCard({
+  toast,
+  onDismiss,
+}: {
+  toast: ToastItem;
+  onDismiss: () => void;
+}) {
   const { id, title, description, variant, action, className } = toast;
 
-  const variantStyles: Record<ToastVariant, { base: string; icon: React.ReactNode }> = {
+  const variantStyles: Record<
+    ToastVariant,
+    { base: string; icon: React.ReactNode }
+  > = {
     default: {
       base: "bg-white border shadow-sm text-gray-900",
       icon: <Info className="w-5 h-5 text-gray-700" />,
@@ -203,12 +267,22 @@ function ToastCard({ toast, onDismiss }: { toast: ToastItem; onDismiss: () => vo
   const vs = variantStyles[variant] ?? variantStyles.default;
 
   return (
-    <div className={cn("max-w-md w-full rounded-lg overflow-hidden", vs.base, className)}>
+    <div
+      className={cn(
+        "max-w-md w-full rounded-lg overflow-hidden",
+        vs.base,
+        className,
+      )}
+    >
       <div className="p-3 flex items-start gap-3">
         <div className="mt-0.5">{vs.icon}</div>
         <div className="flex-1">
           {title ? <div className="font-medium text-sm">{title}</div> : null}
-          {description ? <div className="text-sm text-muted-foreground mt-1">{description}</div> : null}
+          {description ? (
+            <div className="text-sm text-muted-foreground mt-1">
+              {description}
+            </div>
+          ) : null}
           {action ? (
             <div className="mt-3">
               <button
@@ -223,7 +297,7 @@ function ToastCard({ toast, onDismiss }: { toast: ToastItem; onDismiss: () => vo
 
         <button
           onClick={onDismiss}
-          aria-label="Close"
+          aria-label="close"
           className="ml-2 -mr-1 p-1 rounded inline-flex hover:bg-gray-100"
         >
           <X className="w-4 h-4" />

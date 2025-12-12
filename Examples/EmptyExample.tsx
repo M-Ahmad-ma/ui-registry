@@ -1,8 +1,7 @@
+import { FaFolderOpen } from "react-icons/fa6";
+import { ArrowUpRightIcon } from "lucide-react";
 
-import { IconFolderCode } from "@tabler/icons-react"
-import { ArrowUpRightIcon } from "lucide-react"
-
-import { Button } from "@/components/ui/Button"
+import { Button } from "@/components/ui/Button";
 import {
   Empty,
   EmptyContent,
@@ -10,14 +9,14 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/components/ui/Empty"
+} from "@/components/ui/Empty";
 
 export default function EmptyExample() {
   return (
     <Empty>
       <EmptyHeader>
         <EmptyMedia variant="icon">
-          <IconFolderCode />
+          <FaFolderOpen />
         </EmptyMedia>
         <EmptyTitle>No Projects Yet</EmptyTitle>
         <EmptyDescription>
@@ -28,7 +27,7 @@ export default function EmptyExample() {
       <EmptyContent>
         <div className="flex gap-2">
           <Button>Create Project</Button>
-          <Button variant="outline">Import Project</Button>
+          <Button variant="secondary">Import Project</Button>
         </div>
       </EmptyContent>
       <Button
@@ -37,10 +36,10 @@ export default function EmptyExample() {
         className="text-muted-foreground"
         size="sm"
       >
-        <a href="#">
+        <a href="#" className="inline-flex gap-2">
           Learn More <ArrowUpRightIcon />
         </a>
       </Button>
     </Empty>
-  )
+  );
 }

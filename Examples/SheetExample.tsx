@@ -1,7 +1,7 @@
-
 "use client";
-
 import React from "react";
+import { Button } from "@/components/ui/Button";
+import { Input } from "@/components/ui/Input";
 import Sheet, { SheetHeader, SheetFooter } from "@/components/ui/Sheet";
 
 export default function SheetExample() {
@@ -9,33 +9,33 @@ export default function SheetExample() {
 
   return (
     <div className="p-8">
-      <button
-        className="px-4 py-2 rounded bg-indigo-600 text-white"
-        onClick={() => setOpen(true)}
-      >
+      <Button variant="default" onClick={() => setOpen(true)}>
         Open Sheet
-      </button>
+      </Button>
 
       <Sheet open={open} onOpenChange={setOpen} position="right" size="md">
         <SheetHeader>
           <div>
             <h3 className="text-lg font-semibold">Panel title</h3>
-            <p className="text-sm text-gray-500">Short description</p>
+            <p className="text-sm text-muted-foreground">Short description</p>
           </div>
         </SheetHeader>
 
         <div className="space-y-4">
           <p>
-            This is the sheet content. Add forms, settings, or any controls here.
+            This is the sheet content. Add forms, settings, or any controls
+            here.
           </p>
-          <input className="w-full border rounded px-3 py-2" placeholder="Input inside sheet" />
-          <button className="px-3 py-2 rounded bg-green-600 text-white">Primary action</button>
+          <Input placeholder="Input inside sheet" />
+          <Button variant="default">Primary action</Button>
         </div>
 
         <SheetFooter>
           <div className="flex justify-end gap-2">
-            <button className="px-3 py-2 rounded" onClick={() => setOpen(false)}>Cancel</button>
-            <button className="px-3 py-2 rounded bg-indigo-600 text-white">Save</button>
+            <Button variant="secondary" onClick={() => setOpen(false)}>
+              Cancel
+            </Button>
+            <Button variant="default">Save</Button>
           </div>
         </SheetFooter>
       </Sheet>

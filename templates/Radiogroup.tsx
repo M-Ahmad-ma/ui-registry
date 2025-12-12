@@ -19,42 +19,50 @@ interface RadioGroupProps extends React.HTMLAttributes<HTMLDivElement> {
 export const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>(
   ({ options, value, onChange, className, ...props }, ref) => {
     return (
-      <div
-        ref={ref}
-        className={cn("space-y-2", className)}
-        {...props}
-      >
+      <div ref={ref} className={cn("space-y-2", className)} {...props}>
         {options.map((option) => {
           const selected = option.value === value;
           return (
-            <div
+            <button
               key={option.value}
-              className={cn(
-                "flex items-center rounded-md border p-3 cursor-pointer transition hover:bg-gray-50",
-                selected ? "border-blue-500 bg-blue-50" : "border-gray-200"
-              )}
+              type="button"
               onClick={() => onChange?.(option.value)}
+              className={cn(
+                "w-full flex items-start gap-3 rounded-lg border p-4 text-left transition",
+                "focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background",
+                selected
+                  ? "border-primary bg-primary/5"
+                  : "border-border hover:bg-muted/50",
+              )}
             >
               <span
                 className={cn(
-                  "inline-block h-4 w-4 rounded-full border flex-shrink-0 mr-3",
+                  "mt-1 inline-flex h-4 w-4 items-center justify-center rounded-full border",
                   selected
-                    ? "border-blue-500 bg-blue-500"
-                    : "border-gray-400 bg-white"
+                    ? "border-primary bg-primary"
+                    : "border-muted-foreground",
                 )}
-              ></span>
+              >
+                {selected && (
+                  <span className="h-2 w-2 rounded-full bg-background" />
+                )}
+              </span>
               <div className="flex flex-col">
-                <span className="text-gray-900 font-medium">{option.label}</span>
+                <span className="text-sm font-medium text-foreground">
+                  {option.label}
+                </span>
                 {option.description && (
-                  <span className="text-gray-500 text-sm">{option.description}</span>
+                  <span className="text-sm text-muted-foreground">
+                    {option.description}
+                  </span>
                 )}
               </div>
-            </div>
+            </button>
           );
         })}
       </div>
     );
-  }
+  },
 );
 
 RadioGroup.displayName = "RadioGroup";
