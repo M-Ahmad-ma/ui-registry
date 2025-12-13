@@ -424,6 +424,23 @@
         "import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownCheckboxItem } from '@/components/ui/dropdown'",
         "<DropdownMenu><DropdownMenuTrigger asChild><Button variant=\"outline\">Settings</Button></DropdownMenuTrigger><DropdownMenuContent align=\"start\" className=\"w-48\"><DropdownCheckboxItem checked={enabled} onChange={setEnabled}>Enable feature</DropdownCheckboxItem></DropdownMenuContent></DropdownMenu>"
       ]
+    },
+    {
+      "id": "field",
+      "title": "Field",   
+      "description": "A flexible, composable Field component system for list-like UI layouts.",
+      "files": [
+        "Field.tsx"   
+      ],
+      "dependencies": [    
+        "class-variance-authority",  
+        "clsx",
+        "tailwind-merge"
+      ],
+      "usage": [
+        "import {\n  Field,\n  FieldContent,\n  FieldDescription,\n  FieldError,\n  FieldGroup,\n  FieldLabel,\n  FieldLegend,\n  FieldSeparator,\n  FieldSet,\n  FieldTitle,\n} from \"@/components/ui/field\"",
+        "<FieldSet><FieldLegend>Profile</FieldLegend><FieldDescription>This appears on invoices and emails.</FieldDescription><FieldGroup><Field><FieldLabel htmlFor=\"name\">Full name</FieldLabel><Input id=\"name\" autoComplete=\"off\" placeholder=\"Evil Rabbit\" /><FieldDescription>This appears on invoices and emails.</FieldDescription></Field><Field><FieldLabel htmlFor=\"username\">Username</FieldLabel><Input id=\"username\" autoComplete=\"off\" aria-invalid /><FieldError>Choose another username.</FieldError></Field><Field orientation=\"horizontal\"><Switch id=\"newsletter\" /><FieldLabel htmlFor=\"newsletter\">Subscribe to the newsletter</FieldLabel></Field></FieldGroup></FieldSet>"
+      ]
     }
   ]
 }
